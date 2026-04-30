@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_48">48dp</dimen>
+    <dimen name="space_88">88dp</dimen>
+
+    <!-- Screen Margins -->
+    <dimen name="screen_margin_horizontal">20dp</dimen>
+    <dimen name="card_gap_horizontal">12dp</dimen>
+    <dimen name="content_top_below_header">16dp</dimen>
+    <dimen name="content_bottom_above_nav">88dp</dimen>
+
+    <!-- Corner Radii -->
+    <dimen name="radius_card_primary">24dp</dimen>
+    <dimen name="radius_card_stat">20dp</dimen>
+    <dimen name="radius_card_list">20dp</dimen>
+    <dimen name="radius_image_list">16dp</dimen>
+    <dimen name="radius_button_primary">16dp</dimen>
+    <dimen name="radius_input">16dp</dimen>
+    <dimen name="radius_chip">8dp</dimen>
+    <dimen name="radius_nav_bar">36dp</dimen>
+    <dimen name="radius_tooltip">12dp</dimen>
+    <dimen name="radius_bottom_sheet">28dp</dimen>
+    <dimen name="radius_inner_card">16dp</dimen>
+    <dimen name="radius_inner_item">14dp</dimen>
+
+    <!-- Component Sizes -->
+    <dimen name="header_height">72dp</dimen>
+    <dimen name="header_padding_top">16dp</dimen>
+    <dimen name="glass_icon_button_size">42dp</dimen>
+    <dimen name="glass_icon_inner_size">20dp</dimen>
+    <dimen name="nav_bar_height">72dp</dimen>
+    <dimen name="nav_bar_margin_horizontal">24dp</dimen>
+    <dimen name="nav_bar_margin_bottom">16dp</dimen>
+    <dimen name="nav_icon_container_size">48dp</dimen>
+    <dimen name="nav_icon_size">22dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_icon_size">28dp</dimen>
+    <dimen name="fab_margin_right">20dp</dimen>
+    <dimen name="fab_margin_bottom">96dp</dimen>
+    <dimen name="card_min_height">120dp</dimen>
+    <dimen name="stat_card_height">100dp</dimen>
+    <dimen name="list_card_height">88dp</dimen>
+    <dimen name="list_card_image_size">72dp</dimen>
+    <dimen name="button_primary_height">52dp</dimen>
+    <dimen name="button_secondary_height">48dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="chart_height">160dp</dimen>
+    <dimen name="badge_container_size">72dp</dimen>
+    <dimen name="badge_icon_size">32dp</dimen>
+    <dimen name="weather_chip_height">32dp</dimen>
+    <dimen name="segmented_control_height">44dp</dimen>
+    <dimen name="avatar_size">42dp</dimen>
+    <dimen name="notification_badge_size">8dp</dimen>
+    <dimen name="location_icon_size">13dp</dimen>
+</resources>

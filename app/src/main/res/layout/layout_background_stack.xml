@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reusable background stack: Photo + Dark overlay + Green tint overlay -->
+<!-- Include this at the base of every screen layout -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Layer 1: Full-screen background photo -->
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
+        tools:src="@drawable/gradient_bg_dark_green" />
+
+    <!-- Layer 2: Dark overlay — rgba(0,0,0,0.28) -->
+    <View
+        android:id="@+id/overlayDark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/glass_overlay" />
+
+    <!-- Layer 3: Green tint overlay — rgba(10,20,8,0.35) -->
+    <View
+        android:id="@+id/overlayGreenTint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/glass_green_tint" />
+
+</merge>

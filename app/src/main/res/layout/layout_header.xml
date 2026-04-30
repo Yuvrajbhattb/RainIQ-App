@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    layout_header.xml — Shared app header used across all screens
+    Design: App name + location (left) | Notification bell + Avatar (right)
+    Height: 72dp + status bar inset
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/headerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="0dp"
+    android:paddingEnd="@dimen/space_20"
+    android:paddingTop="16dp"
+    android:paddingBottom="@dimen/space_16"
+    tools:background="#33FFFFFF">
+
+    <!-- Left: Logo icon + Brand name + Tagline -->
+    <LinearLayout
+        android:id="@+id/headerLeft"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Drop icon — larger for brand prominence -->
+        <ImageView
+            android:id="@+id/ivAppLogo"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name" />
+
+        <!-- Brand text block -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/space_8">
+
+            <!-- Two-tone RainIQ title -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rain"
+                    android:textColor="@color/text_primary"
+                    android:textSize="39sp"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:letterSpacing="-0.014" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IQ"
+                    android:textColor="@color/accent_teal"
+                    android:textSize="39sp"
+                    android:fontFamily="@font/sf_pro_display_bold"
+                    android:letterSpacing="-0.014" />
+            </LinearLayout>
+
+            <!-- Tagline -->
+            <TextView
+                android:id="@+id/tvHeaderTagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALCULATE • CONSERVE • IMPACT"
+                android:textColor="@color/accent_teal"
+                android:textSize="7sp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:letterSpacing="0.06"
+                android:layout_marginTop="1dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ═══════════════════════════
+         Right: Action icons
+         ═══════════════════════════ -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Notification Bell Button -->
+        <FrameLayout
+            android:id="@+id/btnNotification"
+            android:layout_width="@dimen/glass_icon_button_size"
+            android:layout_height="@dimen/glass_icon_button_size"
+            android:background="@drawable/bg_glass_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Notifications">
+
+            <ImageView
+                android:layout_width="@dimen/glass_icon_inner_size"
+                android:layout_height="@dimen/glass_icon_inner_size"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_bell"
+                android:importantForAccessibility="no" />
+
+            <!-- Notification badge dot -->
+            <View
+                android:id="@+id/notificationBadge"
+                android:layout_width="@dimen/notification_badge_size"
+                android:layout_height="@dimen/notification_badge_size"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_notification_badge" />
+        </FrameLayout>
+
+        <!-- Profile Avatar Button -->
+        <FrameLayout
+            android:id="@+id/btnProfile"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_marginStart="@dimen/space_10"
+            android:background="@drawable/bg_avatar_ring"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Profile">
+
+            <!-- Avatar circle with initials fallback -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_glass_button"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/tvAvatarInitials"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="JS"
+                    android:textColor="@color/accent_lime"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_semibold" />
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:importantForAccessibility="no" />
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

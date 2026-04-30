@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cloud-sun icon for weather -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_primary">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M156,16L156,40M220,80L196,80M210.9,34.9L193,52.8M88,148C88,121.5 109.5,100 136,100C155.2,100 171.8,112.1 179.2,128.9M200,168C200,145.9 182.1,128 160,128L152,128C148,112 136,100 120,100C101.5,100 86.2,113 83.2,130.2C64.2,133.4 48,149.8 48,168C48,189.1 65.9,208 88,208L192,208C209.7,208 224,193.7 224,176" />
+</vector>

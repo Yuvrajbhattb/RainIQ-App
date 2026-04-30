@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RainIQ</string>
+    <string name="app_tagline">Every drop, counted.</string>
+    <string name="location_default">Bengaluru, Karnataka</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_log_entry">Log Entry</string>
+    <string name="nav_ai_tips">AI Tips</string>
+    <string name="nav_more">More</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="todays_insight">Today\'s Water Insight</string>
+    <string name="saved_today">Saved Today</string>
+    <string name="total_savings">Total Savings</string>
+    <string name="monthly_goal">Monthly Goal</string>
+    <string name="set_goal">Set Goal</string>
+    <string name="day_streak">%d day streak</string>
+    <string name="liters_format">%s L</string>
+    <string name="liters_of_format">%1$s L / %2$s L</string>
+
+    <!-- Add Entry -->
+    <string name="log_rainfall">Log Rainfall</string>
+    <string name="save">Save</string>
+    <string name="field_date">Date</string>
+    <string name="field_rainfall">Rainfall (in mm)</string>
+    <string name="field_rainfall_hint">Enter rainfall in millimetres</string>
+    <string name="field_roof_type">Roof Type</string>
+    <string name="field_notes">Notes (optional)</string>
+    <string name="field_notes_hint">e.g., Heavy storm, partial collection…</string>
+    <string name="live_preview_title">Estimated harvest</string>
+    <string name="live_preview_formula">Area × Rainfall × 0.0929 × Coefficient</string>
+    <string name="entry_saved">Entry saved! +%s L added 💧</string>
+
+    <!-- History -->
+    <string name="history">History</string>
+    <string name="no_entries_yet">No entries yet</string>
+    <string name="no_entries_subtitle">Tap the + button on the dashboard to log your first rainfall</string>
+    <string name="log_first_entry">Log First Entry</string>
+
+    <!-- Monthly Report -->
+    <string name="monthly_report">Monthly Report</string>
+
+    <!-- AI Tips -->
+    <string name="water_wisdom">Water Wisdom</string>
+    <string name="powered_by_gemini">Powered by Gemini</string>
+    <string name="get_ai_tips">Get AI Tips</string>
+    <string name="personalized_tips">Your Personalized Tips 🤖</string>
+    <string name="ask_jalbot">Ask Jal-Bot</string>
+
+    <!-- Goals -->
+    <string name="my_goals">My Goals</string>
+    <string name="achieved_format">%d%% achieved</string>
+
+    <!-- Impact -->
+    <string name="your_impact">Your Impact</string>
+    <string name="liters_saved_format">You\'ve saved %s liters of water</string>
+
+    <!-- Achievements -->
+    <string name="achievements">Achievements</string>
+    <string name="achievement_unlocked">Achievement Unlocked!</string>
+
+    <!-- Weather -->
+    <string name="rainfall_forecast">Rainfall Forecast</string>
+
+    <!-- Crop Planner -->
+    <string name="garden_planner">Garden Planner</string>
+    <string name="plan_my_garden">Plan My Garden</string>
+
+    <!-- Share -->
+    <string name="share_report">Share Report</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="reminders">Reminders</string>
+    <string name="my_setup">My Setup</string>
+    <string name="reset_all_data">Reset All Data</string>
+    <string name="about">About</string>
+
+    <!-- Roof Materials -->
+    <string name="roof_concrete">Concrete/RCC</string>
+    <string name="roof_clay">Clay Tiles</string>
+    <string name="roof_metal">Metal/Tin</string>
+    <string name="roof_asphalt">Asphalt</string>
+    <string name="roof_other">Other</string>
+</resources>

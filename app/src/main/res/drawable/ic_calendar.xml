@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Calendar icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/accent_lime">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#C8E632"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M208,32L48,32C39.2,32 32,39.2 32,48L32,208C32,216.8 39.2,224 48,224L208,224C216.8,224 224,216.8 224,208L224,48C224,39.2 216.8,32 208,32ZM176,16L176,48M80,16L80,48M32,80L224,80" />
+</vector>

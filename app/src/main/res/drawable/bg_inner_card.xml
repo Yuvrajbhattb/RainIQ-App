@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inner card (nested within a card) — white glass variant -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/inner_card_bg" />
+            <corners android:radius="@dimen/radius_inner_card" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:type="linear" android:angle="270"
+                android:startColor="#30FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:centerY="0.3" />
+            <corners android:radius="@dimen/radius_inner_card" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/radius_inner_card" />
+            <stroke android:width="1dp" android:color="@color/inner_card_border" />
+        </shape>
+    </item>
+</layer-list>

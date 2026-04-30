@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fragment_feature_history.xml — Rainfall History screen -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="116dp">
+
+    <!-- Month Summary Bar -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp" android:paddingBottom="12dp">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_water_card" android:padding="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="12,450" android:textColor="@color/accent_teal"
+                        android:textSize="22sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Litres" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="18" android:textColor="@color/accent_lime"
+                        android:textSize="22sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Rainy days" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹311" android:textColor="@color/accent_lime"
+                        android:textSize="22sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Saved" android:textColor="@color/text_secondary"
+                        android:textSize="11sp" android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- Log List -->
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:clipToPadding="false"
+        android:overScrollMode="never" android:paddingHorizontal="20dp" android:paddingBottom="160dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="RECENT ENTRIES" android:textColor="@color/text_tertiary"
+                android:textSize="10sp" android:fontFamily="@font/sf_pro_display_medium"
+                android:letterSpacing="0.12" android:layout_marginBottom="10dp" />
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_card" android:padding="16dp" android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_glass_chip">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:layout_gravity="center" android:src="@drawable/ic_cloud_rain" android:tint="@color/accent_teal" />
+                    </FrameLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Apr 26, 2026" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="42 mm · 2,340 L" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹58" android:textColor="@color/accent_lime"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                </LinearLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_card" android:padding="16dp" android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_glass_chip">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:layout_gravity="center" android:src="@drawable/ic_cloud_rain" android:tint="@color/accent_teal" />
+                    </FrameLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Apr 22, 2026" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="28 mm · 1,560 L" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹39" android:textColor="@color/accent_lime"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                </LinearLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_card" android:padding="16dp" android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_glass_chip">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:layout_gravity="center" android:src="@drawable/ic_cloud_rain" android:tint="@color/accent_teal" />
+                    </FrameLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Apr 18, 2026" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="65 mm · 3,625 L" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹90" android:textColor="@color/accent_lime"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                </LinearLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_card" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_glass_chip">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:layout_gravity="center" android:src="@drawable/ic_cloud_rain" android:tint="@color/accent_teal" />
+                    </FrameLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Apr 8, 2026" android:textColor="@color/text_primary"
+                            android:textSize="14sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="88 mm · 4,906 L" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹122" android:textColor="@color/accent_lime"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

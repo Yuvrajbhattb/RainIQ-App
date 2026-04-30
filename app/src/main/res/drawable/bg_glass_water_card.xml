@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    bg_glass_water_card.xml — Hero water stat card (teal reflection + specular)
+    iOS reference: translucent card where background is clearly visible,
+    bright top rim, teal bottom reflection for water identity.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 1: Glass body -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_primary" />
+            <corners android:radius="@dimen/radius_card_primary" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: Top specular — prism highlight -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="@color/glass_specular_top"
+                android:centerColor="@color/glass_specular_mid"
+                android:endColor="#00FFFFFF"
+                android:centerY="0.25" />
+            <corners android:radius="@dimen/radius_card_primary" />
+        </shape>
+    </item>
+
+    <!-- Layer 3: Teal bottom reflection — water identity -->
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#004ECDC4"
+                android:endColor="#334ECDC4" />
+            <corners
+                android:bottomLeftRadius="@dimen/radius_card_primary"
+                android:bottomRightRadius="@dimen/radius_card_primary"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp" />
+        </shape>
+    </item>
+
+    <!-- Layer 4: Teal rim border -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/radius_card_primary" />
+            <stroke
+                android:width="1dp"
+                android:color="#3D4ECDC4" />
+        </shape>
+    </item>
+
+</layer-list>

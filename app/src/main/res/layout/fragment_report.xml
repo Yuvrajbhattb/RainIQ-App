@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_report.xml — Monthly Report screen
+    Phase 2: ScrollView container
+    Phase 4A: Month nav + stats grid + charts + insight card
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollReport"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/reportContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="104dp"
+        android:paddingBottom="@dimen/content_bottom_above_nav"
+        android:paddingStart="@dimen/screen_margin_horizontal"
+        android:paddingEnd="@dimen/screen_margin_horizontal">
+
+        <!-- Phase 2 placeholder -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:text="Monthly Report"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_medium" />
+
+    </LinearLayout>
+</ScrollView>

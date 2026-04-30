@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_onboarding_page1.xml
+    Screen 1: "Every Drop, Counted" — animated rain illustration hero
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingStart="28dp"
+    android:paddingEnd="28dp">
+
+    <!-- Rain Illustration — takes top 55% of screen -->
+    <com.rainiq.components.RainfallIllustrationView
+        android:id="@+id/rainfallView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <!-- Text content -->
+    <LinearLayout
+        android:id="@+id/textContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:paddingBottom="160dp">
+
+        <!-- Headline -->
+        <TextView
+            android:id="@+id/tvHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Every Drop,\nCounted."
+            android:textSize="40sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:letterSpacing="-0.020"
+            android:lineSpacingExtra="4sp"
+            android:alpha="0" />
+
+        <!-- Sub-headline -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="RainIQ turns your rooftop into a measurable water asset. Start tracking your rainwater savings — one drop at a time."
+            android:textSize="15sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:lineSpacingExtra="5sp"
+            android:alpha="0" />
+
+        <!-- Tagline chip -->
+        <FrameLayout
+            android:id="@+id/chipTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_chip"
+            android:layout_marginTop="20dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:alpha="0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💧  Every drop, counted."
+                android:textColor="@color/accent_lime"
+                style="@style/TextStyle.ChipLabel" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Phosphor: map-pin (filled) — Location -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="13dp"
+    android:height="13dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_secondary">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M128,16C79.4,16 40,55.4 40,104C40,168 128,240 128,240C128,240 216,168 216,104C216,55.4 176.6,16 128,16ZM128,136C110.3,136 96,121.7 96,104C96,86.3 110.3,72 128,72C145.7,72 160,86.3 160,104C160,121.7 145.7,136 128,136Z" />
+</vector>

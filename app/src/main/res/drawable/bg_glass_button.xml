@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    bg_glass_button.xml — L5 Icon Button Glass Orb
+    Used for: header back ←, profile avatar, notification bell, screen options •••
+    Same convex glass treatment as nav circles — consistent premium feel.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Shadow base for depth -->
+    <item android:top="2dp" android:left="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/glass_rim_inner" />
+        </shape>
+    </item>
+
+    <!-- Glass body -->
+    <item android:bottom="2dp" android:right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/glass_button" />
+        </shape>
+    </item>
+
+    <!-- Top specular — prism catch on header buttons -->
+    <item android:bottom="2dp" android:right="2dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="@color/glass_specular_top"
+                android:centerColor="#15FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:centerY="0.35" />
+        </shape>
+    </item>
+
+    <!-- Bright rim border -->
+    <item android:bottom="2dp" android:right="2dp">
+        <shape android:shape="oval">
+            <stroke
+                android:width="1dp"
+                android:color="@color/glass_rim_outer" />
+        </shape>
+    </item>
+
+</layer-list>

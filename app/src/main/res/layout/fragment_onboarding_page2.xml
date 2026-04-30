@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_onboarding_page2.xml
+    Screen 2: "Your Rooftop Is Worth More" — water conversion animation
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="28dp"
+    android:paddingEnd="28dp">
+
+    <!-- Top label -->
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="DID YOU KNOW?"
+        android:textColor="@color/accent_lime"
+        android:textSize="15sp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:letterSpacing="0.1"
+        android:alpha="0" />
+
+    <!-- Headline -->
+    <TextView
+        android:id="@+id/tvHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Your roof harvests\nwater every monsoon."
+        android:textSize="32sp"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:letterSpacing="-0.018"
+        android:lineSpacingExtra="4sp"
+        android:alpha="0" />
+
+    <!-- Water Conversion Illustration -->
+    <com.rainiq.components.WaterConversionView
+        android:id="@+id/waterConversionView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="24dp" />
+
+    <!-- Glass info card -->
+    <FrameLayout
+        android:id="@+id/infoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_glass_card"
+        android:padding="18dp"
+        android:layout_marginBottom="180dp"
+        android:alpha="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A 100 sq ft concrete roof can harvest up to 2,340 L in a single monsoon season."
+                android:textSize="15sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:lineSpacingExtra="4sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="We calculate it automatically using your roof area, type, and local rainfall data."
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:lineSpacingExtra="4sp" />
+
+            <!-- Clean metric tag -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Area × Rainfall × Runoff = 💧 Liters"
+                android:textColor="@color/accent_teal"
+                android:textSize="13sp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:letterSpacing="0.05" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

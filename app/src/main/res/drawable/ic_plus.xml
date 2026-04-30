@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Plus icon for FAB -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_on_light_glass">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#1A2E1A"
+        android:strokeWidth="20"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M40,128L216,128M128,40L128,216" />
+</vector>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="false" android:clipToPadding="false"
+    android:overScrollMode="never" android:paddingTop="116dp" android:paddingBottom="160dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingHorizontal="20dp">
+        <!-- Current goal -->
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card" android:padding="20dp" android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="MONTHLY GOAL" android:textColor="@color/accent_lime"
+                    android:textSize="10sp" android:fontFamily="@font/sf_pro_display_medium"
+                    android:letterSpacing="0.12" android:layout_marginBottom="12dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="16dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="12,450 / 20,000 L"
+                            android:textColor="@color/text_primary" android:textSize="22sp"
+                            android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="62% complete · 4 days left"
+                            android:textColor="@color/text_secondary" android:textSize="12sp"
+                            android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="62%" android:textColor="@color/accent_lime"
+                        android:textSize="32sp" android:fontFamily="@font/sf_pro_display_medium" />
+                </LinearLayout>
+                <ProgressBar android:layout_width="match_parent" android:layout_height="8dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:progress="62" android:max="100"
+                    android:progressDrawable="@drawable/bg_progress_bar" />
+            </LinearLayout>
+        </FrameLayout>
+        <!-- Goal tiles -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="SET GOALS" android:textColor="@color/text_tertiary"
+            android:textSize="10sp" android:fontFamily="@font/sf_pro_display_medium"
+            android:letterSpacing="0.12" android:layout_marginBottom="10dp" />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card" android:padding="20dp" android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Monthly Harvest" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Target: 20,000 L" android:textColor="@color/text_secondary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="4dp" />
+                </LinearLayout>
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" android:tint="@color/text_tertiary" />
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card" android:padding="20dp" android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Annual Savings" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Target: ₹2,000" android:textColor="@color/text_secondary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="4dp" />
+                </LinearLayout>
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" android:tint="@color/text_tertiary" />
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card" android:padding="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Streak Days" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Target: 30 days" android:textColor="@color/text_secondary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="4dp" />
+                </LinearLayout>
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_chevron_right" android:tint="@color/text_tertiary" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

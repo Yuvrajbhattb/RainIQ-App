@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gear/settings icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_primary">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M128,80C101.5,80 80,101.5 80,128C80,154.5 101.5,176 128,176C154.5,176 176,154.5 176,128C176,101.5 154.5,80 128,80ZM128,96C145.7,96 160,110.3 160,128C160,145.7 145.7,160 128,160C110.3,160 96,145.7 96,128C96,110.3 110.3,96 128,96Z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M128,24L128,56M128,200L128,232M38.8,70L66.4,86M189.6,170L217.2,186M38.8,186L66.4,170M189.6,86L217.2,70" />
+</vector>

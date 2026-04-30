@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Phosphor: house (outline) — Dashboard/Home -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_primary">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M152,208L152,160L104,160L104,208M128,28L216,108L216,216C216,220.4 212.4,224 208,224L48,224C43.6,224 40,220.4 40,216L40,108Z" />
+</vector>

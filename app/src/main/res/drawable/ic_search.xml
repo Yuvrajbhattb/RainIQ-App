@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Search icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_primary">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M112,192C156.2,192 192,156.2 192,112C192,67.8 156.2,32 112,32C67.8,32 32,67.8 32,112C32,156.2 67.8,192 112,192ZM168.6,168.6L224,224" />
+</vector>

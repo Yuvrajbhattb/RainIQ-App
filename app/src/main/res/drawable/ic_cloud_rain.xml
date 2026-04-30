@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cloud rain icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_primary">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M88,192L72,224M136,192L120,224M184,192L168,224M200,128C200,105.9 182.1,88 160,88L152,88C148,72 136,60 120,60C101.5,60 86.2,73 83.2,90.2C64.2,93.4 48,109.8 48,128C48,149.1 65.9,168 88,168L192,168C209.7,168 224,153.7 224,136" />
+</vector>

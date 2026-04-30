@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_onboarding_page4.xml
+    Screen 4: "Track. Achieve. Impact." — impact counters + badges
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="28dp"
+    android:paddingEnd="28dp">
+
+    <!-- Label -->
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="REAL WORLD IMPACT"
+        android:textColor="@color/accent_lime"
+        android:textSize="12sp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:letterSpacing="0.1"
+        android:alpha="0" />
+
+    <!-- Headline -->
+    <TextView
+        android:id="@+id/tvHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Track. Achieve.\nMake an Impact."
+        android:textSize="32sp"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:letterSpacing="-0.018"
+        android:lineSpacingExtra="4sp"
+        android:alpha="0" />
+
+    <!-- Sub-headline -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Every liter logged shows you real-world impact — household days powered, trees watered, and money saved."
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:fontFamily="@font/sf_pro_display_regular"
+        android:lineSpacingExtra="4sp"
+        android:alpha="0" />
+
+    <!-- Impact Counter Custom View -->
+    <com.rainiq.components.ImpactCounterView
+        android:id="@+id/impactCounterView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Bottom placeholder to leave room for nav controls -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="180dp" />
+
+</LinearLayout>

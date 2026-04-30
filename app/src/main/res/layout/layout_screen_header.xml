@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    layout_screen_header.xml — Per-screen title bar for non-home screens
+    Design: Glass back button (left) | Centered title | Glass options button (right)
+
+    ALIGNMENT CONTRACT:
+    - paddingStart = @dimen/space_20 (20dp) → back button left edge = 20dp from screen left
+    - paddingEnd   = @dimen/space_20 (20dp) → options button right edge = 20dp from screen right
+    - btnScreenOptions size = @dimen/avatar_size (42dp) → exact same size as home header profile avatar
+    - paddingTop/Bottom = 16dp/20dp → matches layout_header.xml vertical rhythm
+
+    This ensures the ••• button occupies the EXACT same (x,y) coordinates as the
+    profile avatar on the home header → clean, seamless visual transition.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screenHeaderRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_20"
+        android:paddingEnd="@dimen/space_20"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp">
+
+        <!-- ← Back glass button — same size as notification bell (42dp) -->
+        <FrameLayout
+            android:id="@+id/btnScreenBack"
+            android:layout_width="@dimen/glass_icon_button_size"
+            android:layout_height="@dimen/glass_icon_button_size"
+            android:background="@drawable/bg_glass_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_left"
+                android:tint="@color/text_primary"
+                android:importantForAccessibility="no" />
+        </FrameLayout>
+
+        <!-- Centered Page Title -->
+        <TextView
+            android:id="@+id/tvScreenTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Screen Title"
+            style="@style/TextStyle.CardTitle"
+            android:textSize="22sp"
+            android:textColor="@color/text_primary" />
+
+        <!-- ⋯ Options glass button — EXACT same size as profile avatar (42dp = @dimen/avatar_size)
+             so it lands on the same (x,y) coords during page transition -->
+        <FrameLayout
+            android:id="@+id/btnScreenOptions"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:background="@drawable/bg_glass_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Options">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="•••"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                android:letterSpacing="0.05" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

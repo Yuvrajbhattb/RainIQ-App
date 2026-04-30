@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    bg_nav_circle_clone.xml — Premium convex glass orb for bottom nav icons
+    iOS reference: circular elements with a bright top-arc specular highlight,
+    frosted glass body, a visible rim, and a subtle bottom shadow for 3D depth.
+    4-layer convex lens system:
+      Layer 1: Outer shadow (physical depth)
+      Layer 2: Glass body (frosted green)
+      Layer 3: Top specular gradient (the convex light catch — MOST IMPORTANT)
+      Layer 4: Bright rim (glass edge)
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 1: Outer shadow — bottom-right offset for 3D lift -->
+    <item android:top="2dp" android:left="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/glass_rim_inner" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: Glass body (main frosted circle) -->
+    <item
+        android:bottom="2dp"
+        android:right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/glass_nav_circle" />
+        </shape>
+    </item>
+
+    <!-- Layer 3: Top-half specular highlight — the convex lens catch -->
+    <!-- Simulate top arc by offsetting bottom so gradient only hits top ~45% -->
+    <item
+        android:bottom="2dp"
+        android:right="2dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="@color/glass_specular_top"
+                android:centerColor="#1AFFFFFF"
+                android:endColor="#00FFFFFF"
+                android:centerY="0.4" />
+        </shape>
+    </item>
+
+    <!-- Layer 4: Bright glass rim -->
+    <item
+        android:bottom="2dp"
+        android:right="2dp">
+        <shape android:shape="oval">
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/glass_rim_outer" />
+        </shape>
+    </item>
+
+</layer-list>

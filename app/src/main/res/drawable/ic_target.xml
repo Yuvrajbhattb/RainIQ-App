@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Target/goals icon -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256"
+    android:tint="@color/text_primary">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="16"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M128,232C185.4,232 232,185.4 232,128C232,70.6 185.4,24 128,24C70.6,24 24,70.6 24,128C24,185.4 70.6,232 128,232ZM128,192C163.3,192 192,163.3 192,128C192,92.7 163.3,64 128,64C92.7,64 64,92.7 64,128C64,163.3 92.7,192 128,192ZM128,160C145.7,160 160,145.7 160,128C160,110.3 145.7,96 128,96C110.3,96 96,110.3 96,128C96,145.7 110.3,160 128,160Z" />
+</vector>

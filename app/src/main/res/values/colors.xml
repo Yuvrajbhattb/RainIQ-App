@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Primary Background Colors (§2.1) — NO CHANGE           -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <color name="bg_deepest">#0A150A</color>         <!-- Absolute darkest bg, behind photos -->
+    <color name="bg_dark">#111D0F</color>             <!-- Main dark bg when no photo -->
+    <color name="bg_forest">#152010</color>            <!-- Card base tint -->
+    <color name="bg_mid">#1C2B18</color>               <!-- Secondary surface -->
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Glass Surface Colors — Semi-Transparent (§2.2)         -->
+    <!-- Format: #AARRGGBB                                      -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Liquid Glass surfaces — tuned for iOS-style frosted transparency (§2.2 UPGRADE) -->
+    <color name="glass_primary">#6E1C3519</color>      <!-- 43% opacity — Primary cards (lighter + more see-through) -->
+    <color name="glass_secondary">#551A3018</color>    <!-- 33% opacity — Secondary / nested cards -->
+    <color name="glass_nav">#991A2E1A</color>           <!-- 60% opacity — Nav bar (translucent pill) -->
+    <color name="glass_button">#59263520</color>        <!-- 35% opacity — Icon buttons (convex glass orbs) -->
+    <color name="glass_chip">#552B3D22</color>          <!-- 33% opacity — Filter chips / icon containers -->
+    <color name="glass_tooltip">#EBFFFFFF</color>       <!-- 92% white — Chart tooltips -->
+    <color name="glass_overlay">#47000000</color>       <!-- 28% black — Photo darkening -->
+    <color name="glass_green_tint">#3A0A1408</color>    <!-- 23% — Green tint overlay (reduced) -->
+
+    <!-- Liquid Glass specular tokens — prism/rim highlights (NEW) -->
+    <color name="glass_specular_top">#55FFFFFF</color>  <!-- 33% white — top-edge prism catch -->
+    <color name="glass_specular_mid">#2EFFFFFF</color>  <!-- 18% white — mid specular gradient stop -->
+    <color name="glass_rim_outer">#45FFFFFF</color>     <!-- 27% white — outer glass rim/border -->
+    <color name="glass_rim_inner">#18000000</color>     <!-- 10% black — inner shadow for depth -->
+    <color name="glass_nav_circle">#4D1E3017</color>    <!-- 30% — nav circle glass body -->
+
+    <!-- Water glass tint — for AI / water cards -->
+    <color name="glass_teal_tint">#144ECDC4</color>    <!-- 8% teal — water card reflection -->
+    <color name="glass_water_card">#1A4ECDC4</color>   <!-- 10% teal — hero water card -->
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Accent Colors (§2.3)                                   -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <color name="accent_lime">#C8E632</color>           <!-- Reward/action/success — CTA -->
+    <color name="accent_lime_dark">#9DB520</color>      <!-- Pressed state for lime -->
+    <color name="accent_orange">#E8692A</color>         <!-- Warning / attention / money alerts -->
+    <color name="accent_orange_dark">#C45520</color>    <!-- Pressed state for orange -->
+    <color name="accent_teal">#4ECDC4</color>           <!-- Water / intelligence / flow -->
+    <color name="accent_teal_dark">#35A89F</color>      <!-- Pressed / deeper teal -->
+    <color name="accent_red_soft">#E05555</color>       <!-- Error, critical alerts -->
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Text Colors (§2.4)                                     -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <color name="text_primary">#FFFFFF</color>           <!-- Headlines, main labels -->
+    <color name="text_secondary">#B8FFFFFF</color>       <!-- Sub-labels (72% white) -->
+    <color name="text_tertiary">#73FFFFFF</color>        <!-- Hints, placeholders (45% white) -->
+    <color name="text_accent_lime">#C8E632</color>       <!-- Achievement values — rewards -->
+    <color name="text_accent_teal">#4ECDC4</color>       <!-- Water metric values -->
+    <color name="text_accent_orange">#E8692A</color>     <!-- Warning values -->
+    <color name="text_on_light_glass">#1A2E1A</color>    <!-- Text on white tooltips / CTA -->
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Border & Divider Colors (§2.5)                         -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <color name="border_glass_light">#45FFFFFF</color>   <!-- 27% white — visible glass rim (UPGRADED) -->
+    <color name="border_glass_dark">#22FFFFFF</color>    <!-- 13% white — secondary border (UPGRADED) -->
+    <color name="border_inner">#2AFFFFFF</color>          <!-- 16% white — dividers inside cards (UPGRADED) -->
+    <color name="border_active">#66C8E632</color>        <!-- 40% lime — active/selected primary -->
+    <color name="border_teal_active">#664ECDC4</color>   <!-- 40% teal — water / AI focused state -->
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Interaction & State Colors                              -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <color name="ripple_white">#26FFFFFF</color>          <!-- 15% white — ripple on glass -->
+    <color name="nav_icon_active_bg">#2EFFFFFF</color>    <!-- 18% white — active nav bg -->
+    <color name="nav_icon_inactive">#73FFFFFF</color>     <!-- 45% white — inactive nav icon -->
+    <color name="input_bg">#14FFFFFF</color>              <!-- 8% white — input field bg -->
+    <color name="input_border_default">#29FFFFFF</color>  <!-- 16% white — input border -->
+    <color name="input_border_focus">#99C8E632</color>    <!-- 60% lime — primary focus input -->
+    <color name="input_border_focus_teal">#994ECDC4</color> <!-- 60% teal — AI/smart field focus -->
+    <color name="input_border_error">#B3E8692A</color>    <!-- 70% orange — error input -->
+    <color name="inner_card_bg">#22FFFFFF</color>         <!-- 13% white — nested card bg (UPGRADED) -->
+    <color name="inner_card_border">#38FFFFFF</color>     <!-- 22% white — nested card border (UPGRADED) -->
+
+    <!-- CTA Button -->
+    <color name="cta_shadow">#47C8E632</color>            <!-- 28% lime glow shadow (reduced from 35%) -->
+    <color name="fab_shadow">#59C8E632</color>            <!-- 35% lime glow for FAB -->
+
+    <!-- Chart colors -->
+    <color name="chart_grid">#1AFFFFFF</color>            <!-- 10% white — grid lines -->
+    <color name="chart_axis_text">#99FFFFFF</color>       <!-- 60% white — axis labels -->
+    <color name="chart_primary">#C8E632</color>           <!-- Primary data line — lime -->
+    <color name="chart_secondary">#4ECDC4</color>         <!-- Secondary data line — teal (water) -->
+    <color name="chart_warning">#E8692A</color>           <!-- Warning/overage data — orange -->
+
+    <!-- Semantic card tints -->
+    <color name="insight_bg_tint">#1AC8E632</color>       <!-- 10% lime — achievement insight bg -->
+    <color name="water_card_tint">#144ECDC4</color>       <!-- 8% teal — water metric card bg -->
+    <color name="ai_card_tint">#0F4ECDC4</color>          <!-- 6% teal — AI card subtle bg -->
+
+    <!-- Delete swipe -->
+    <color name="swipe_delete_bg">#CCE05555</color>       <!-- Red glass for swipe delete -->
+
+    <!-- Progress bar split -->
+    <color name="progress_achievement">#C8E632</color>    <!-- Success / goal met — lime -->
+    <color name="progress_water">#4ECDC4</color>          <!-- Water usage metric — teal -->
+</resources>

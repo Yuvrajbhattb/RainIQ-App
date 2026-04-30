@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_add_entry.xml — Bottom Sheet for logging rainfall
+    Phase 3B: Date picker, rainfall input, roof type chips, notes, preview
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_glass_card">
+
+    <!-- Handle line -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_progress_bar"
+        android:backgroundTint="@color/text_tertiary" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_rainfall"
+        style="@style/TextStyle.DisplayUnit"
+        android:layout_marginBottom="24dp" />
+
+    <!-- 1. Date Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/field_date"
+        style="@style/TextStyle.BodySecondary"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:id="@+id/btnDate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:background="@drawable/bg_glass_input"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_calendar"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/tvSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Today, 24 Oct"
+            style="@style/TextStyle.BodyPrimary" />
+    </LinearLayout>
+
+    <!-- 2. Rainfall Amount -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/field_rainfall"
+        style="@style/TextStyle.BodySecondary"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etRainfall"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:background="@drawable/bg_glass_input"
+        android:hint="@string/field_rainfall_hint"
+        android:textColorHint="@color/text_tertiary"
+        android:textColor="@color/text_primary"
+        android:inputType="numberDecimal"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 3. Roof Type Selector (Chips) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/field_roof_type"
+        style="@style/TextStyle.BodySecondary"
+        android:layout_marginBottom="8dp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupRoof"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipConcrete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roof_concrete"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:textColor="@color/text_primary"
+                app:chipBackgroundColor="@color/glass_chip" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipClay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roof_clay"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:textColor="@color/text_primary"
+                app:chipBackgroundColor="@color/glass_chip" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMetal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roof_metal"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:textColor="@color/text_primary"
+                app:chipBackgroundColor="@color/glass_chip" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- 4. Notes Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/field_notes"
+        style="@style/TextStyle.BodySecondary"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etNotes"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_glass_input"
+        android:hint="@string/field_notes_hint"
+        android:textColorHint="@color/text_tertiary"
+        android:textColor="@color/text_primary"
+        android:inputType="textMultiLine"
+        android:gravity="top|start"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- 5. Live Preview Card -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_inner_card"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/live_preview_title"
+                style="@style/TextStyle.CardTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/live_preview_formula"
+                style="@style/TextStyle.BodySecondary"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvPreviewLiters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 L"
+                style="@style/TextStyle.StatNumber"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- CTA Button -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_primary_height"
+        android:background="@drawable/bg_button_primary"
+        android:text="@string/save"
+        style="@style/TextStyle.ButtonCta"
+        app:backgroundTint="@null" />
+
+</LinearLayout>

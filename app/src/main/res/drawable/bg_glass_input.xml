@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Glass input field background -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/input_bg" />
+    <corners android:radius="@dimen/radius_input" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/input_border_default" />
+</shape>

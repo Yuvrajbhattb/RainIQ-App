@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="false" android:clipToPadding="false"
+    android:overScrollMode="never" android:paddingTop="116dp" android:paddingBottom="160dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingHorizontal="20dp">
+        <!-- Total impact card -->
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_water_card" android:padding="20dp" android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="YOUR TOTAL IMPACT" android:textColor="@color/accent_teal"
+                    android:textSize="10sp" android:fontFamily="@font/sf_pro_display_medium"
+                    android:letterSpacing="0.12" android:layout_marginBottom="16dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="66,960" android:textColor="@color/accent_teal" android:textSize="26sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Litres saved" android:textColor="@color/text_secondary" android:textSize="11sp" android:fontFamily="@font/sf_pro_display_regular" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="₹1,675" android:textColor="@color/accent_lime" android:textSize="26sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Money saved" android:textColor="@color/text_secondary" android:textSize="11sp" android:fontFamily="@font/sf_pro_display_regular" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="4.2" android:textColor="@color/accent_lime" android:textSize="26sp" android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Trees saved" android:textColor="@color/text_secondary" android:textSize="11sp" android:fontFamily="@font/sf_pro_display_regular" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+        <!-- Monthly breakdown -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="MONTHLY BREAKDOWN" android:textColor="@color/text_tertiary"
+            android:textSize="10sp" android:fontFamily="@font/sf_pro_display_medium"
+            android:letterSpacing="0.12" android:layout_marginBottom="10dp" />
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card" android:padding="20dp" android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="April 2026" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="12,450 L · 18 rain days" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="3dp" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="₹311" android:textColor="@color/accent_lime" android:textSize="16sp" android:fontFamily="@font/sf_pro_display_medium" />
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card" android:padding="20dp" android:layout_marginBottom="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="March 2026" android:textColor="@color/text_primary" android:textSize="15sp" android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="8,200 L · 12 rain days" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="3dp" />
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="₹205" android:textColor="@color/accent_lime" android:textSize="16sp" android:fontFamily="@font/sf_pro_display_medium" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

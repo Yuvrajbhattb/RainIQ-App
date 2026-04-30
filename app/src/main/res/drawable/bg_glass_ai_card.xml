@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    bg_glass_ai_card.xml — AI / Jal-Bot card with teal intelligence shimmer
+    iOS reference: same frosted glass card + teal accent shimmer at top (AI identity)
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Layer 1: Glass body -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_primary" />
+            <corners android:radius="@dimen/radius_card_primary" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: Teal top shimmer — AI intelligence identity -->
+    <item android:gravity="top">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#334ECDC4"
+                android:centerColor="#124ECDC4"
+                android:endColor="#004ECDC4"
+                android:centerY="0.5" />
+            <corners
+                android:topLeftRadius="@dimen/radius_card_primary"
+                android:topRightRadius="@dimen/radius_card_primary"
+                android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp" />
+        </shape>
+    </item>
+
+    <!-- Layer 3: Top white specular OVER the teal (prism on top of shimmer) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="@color/glass_specular_mid"
+                android:endColor="#00FFFFFF"
+                android:centerY="0.2" />
+            <corners android:radius="@dimen/radius_card_primary" />
+        </shape>
+    </item>
+
+    <!-- Layer 4: Teal-tinted rim -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/radius_card_primary" />
+            <stroke
+                android:width="1dp"
+                android:color="#3D4ECDC4" />
+        </shape>
+    </item>
+
+</layer-list>

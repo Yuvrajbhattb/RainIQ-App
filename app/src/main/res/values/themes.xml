@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Base Theme — Liquid Nature Glass                        -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <style name="Theme.RainIQ" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary palette -->
+        <item name="colorPrimary">@color/accent_lime</item>
+        <item name="colorOnPrimary">@color/text_on_light_glass</item>
+        <item name="colorPrimaryContainer">@color/bg_mid</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+
+        <!-- Secondary palette -->
+        <item name="colorSecondary">@color/accent_teal</item>
+        <item name="colorOnSecondary">@color/text_on_light_glass</item>
+
+        <!-- Tertiary / Error -->
+        <item name="colorTertiary">@color/accent_orange</item>
+        <item name="colorError">@color/accent_red_soft</item>
+
+        <!-- Surface / Background -->
+        <item name="colorSurface">@color/bg_dark</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/bg_forest</item>
+        <item name="android:colorBackground">@color/bg_deepest</item>
+
+        <!-- Edge-to-edge: transparent system bars -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+
+        <!-- Shape appearances -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.RainIQ.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.RainIQ.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.RainIQ.Large</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Shape Appearances                                      -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <style name="ShapeAppearance.RainIQ.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.RainIQ.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="ShapeAppearance.RainIQ.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Typography Styles (§4.2 Design System)                 -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <style name="TextStyle" parent="" />
+
+    <style name="TextStyle.AppName">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">-0.014</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="TextStyle.LocationLabel">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="TextStyle.DisplayHero">
+        <item name="android:textSize">52sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">-0.038</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="TextStyle.DisplayUnit">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">-0.042</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="TextStyle.CardTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="TextStyle.CardSubtitle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:letterSpacing">0.017</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="TextStyle.BodyPrimary">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="TextStyle.BodySecondary">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="TextStyle.StatNumber">
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:textColor">@color/accent_lime</item>
+        <item name="android:letterSpacing">-0.018</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+    </style>
+
+    <style name="TextStyle.StatUnit">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingExtra">5sp</item>
+    </style>
+
+    <style name="TextStyle.ChipLabel">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:letterSpacing">0.045</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+    </style>
+
+    <style name="TextStyle.NavLabel">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_tertiary</item>
+        <item name="android:letterSpacing">0.030</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+    </style>
+
+    <style name="TextStyle.Tooltip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_on_light_glass</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="TextStyle.TooltipSub">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">@color/text_on_light_glass</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="TextStyle.ButtonCta">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textColor">@color/text_on_light_glass</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.094</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Bottom Sheet Theme                                     -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <style name="Theme.RainIQ.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.RainIQ.BottomSheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <style name="Widget.RainIQ.BottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.RainIQ.BottomSheet</item>
+        <item name="backgroundTint">@color/bg_dark</item>
+    </style>
+
+    <style name="ShapeAppearance.RainIQ.BottomSheet" parent="">
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+</resources>

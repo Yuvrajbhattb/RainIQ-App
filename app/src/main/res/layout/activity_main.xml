@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml — Root layout for RainIQ Tracker
+    Phase 2: Full shell with layered background, header, fragment container, FAB, floating nav pill
+
+    Layer stack (bottom to top):
+    1. Background photo (ImageView, full screen)
+    2. Dark overlay (View, rgba 0,0,0,0.28)
+    3. Green tint overlay (View, rgba 10,20,8,0.35)
+    4. Fragment container (FrameLayout, holds scrollable content)
+    5. Header bar (included layout, sits on top of content)
+    6. FAB (ImageButton, floats above nav bar)
+    7. Floating bottom nav pill (LinearLayout with glass bg)
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_deepest"
+    tools:context=".ui.MainActivity">
+
+    <!-- ═══ LAYER 1: Full-screen background photo ═══ -->
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradient_bg_dark_green"
+        android:importantForAccessibility="no" />
+
+    <!-- ═══ LAYER 2: Dark overlay rgba(0,0,0,0.28) ═══ -->
+    <View
+        android:id="@+id/overlayDark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/glass_overlay" />
+
+    <!-- ═══ LAYER 3: Green tint overlay rgba(10,20,8,0.35) ═══ -->
+    <View
+        android:id="@+id/overlayGreenTint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/glass_green_tint" />
+
+    <!-- ═══ LAYER 4: Fragment container (scrollable content under header) ═══ -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- ═══ LAYER 5a: Home header (only visible on Dashboard) ═══ -->
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- ═══ LAYER 5b: Screen title header (visible on non-Dashboard tabs) ═══ -->
+    <include
+        android:id="@+id/layoutScreenHeader"
+        layout="@layout/layout_screen_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+
+    <!-- ═══ LAYER 7: Floating bottom nav pill (5-tab with center +) ═══ -->
+    <LinearLayout
+        android:id="@+id/navContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_nav_pill_clone"
+        android:orientation="horizontal"
+        android:elevation="16dp"
+        android:padding="6dp"
+        android:gravity="center_vertical">
+
+        <!-- ─── Tab 1: Dashboard / Home ─── -->
+        <FrameLayout
+            android:id="@+id/navIconContainerDashboard"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_nav_circle_clone"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/navIconDashboard"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_home"
+                android:tint="#E0E0E0"
+                android:contentDescription="Dashboard" />
+        </FrameLayout>
+
+        <!-- ─── Tab 2: Log Entry (Plant) ─── -->
+        <FrameLayout
+            android:id="@+id/navIconContainerLogEntry"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_nav_circle_clone"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/navIconLogEntry"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_plant"
+                android:tint="#E0E0E0"
+                android:contentDescription="Log Entry" />
+        </FrameLayout>
+
+        <!-- ─── CENTER: Add Entry (+) ─── -->
+        <FrameLayout
+            android:id="@+id/navIconContainerAdd"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_nav_add_glass"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/navIconAdd"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_plus"
+                android:tint="#99CBFF7A"
+                android:contentDescription="Add Entry" />
+        </FrameLayout>
+
+        <!-- ─── Tab 3: AI Tips (Scan/Focus) ─── -->
+        <FrameLayout
+            android:id="@+id/navIconContainerAiTips"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_nav_circle_clone"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/navIconAiTips"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_target"
+                android:tint="#E0E0E0"
+                android:contentDescription="AI Tips" />
+        </FrameLayout>
+
+        <!-- ─── Tab 4: More (Grid) ─── -->
+        <FrameLayout
+            android:id="@+id/navIconContainerMore"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_nav_circle_clone"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/navIconMore"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_grid"
+                android:tint="#E0E0E0"
+                android:contentDescription="More" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+

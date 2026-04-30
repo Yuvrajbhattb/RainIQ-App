@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="false" android:clipToPadding="false"
+    android:overScrollMode="never" android:paddingTop="116dp" android:paddingBottom="160dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingHorizontal="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="EARNED" android:textColor="@color/accent_lime"
+            android:textSize="10sp" android:fontFamily="@font/sf_pro_display_medium"
+            android:letterSpacing="0.12" android:layout_marginBottom="12dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <FrameLayout android:layout_width="0dp" android:layout_height="120dp"
+                android:layout_weight="1" android:background="@drawable/bg_glass_card"
+                android:padding="16dp" android:layout_marginEnd="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💧" android:textSize="32sp" android:gravity="center"
+                        android:layout_marginBottom="6dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="First Drop" android:textColor="@color/text_primary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_medium" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="First entry logged" android:textColor="@color/text_tertiary"
+                        android:textSize="10sp" android:fontFamily="@font/sf_pro_display_regular" android:gravity="center" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_width="0dp" android:layout_height="120dp"
+                android:layout_weight="1" android:background="@drawable/bg_glass_card"
+                android:padding="16dp" android:layout_marginStart="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🌧️" android:textSize="32sp" android:gravity="center"
+                        android:layout_marginBottom="6dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Rain Chaser" android:textColor="@color/text_primary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_medium" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="7-day streak" android:textColor="@color/text_tertiary"
+                        android:textSize="10sp" android:fontFamily="@font/sf_pro_display_regular" android:gravity="center" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="24dp">
+            <FrameLayout android:layout_width="0dp" android:layout_height="120dp"
+                android:layout_weight="1" android:background="@drawable/bg_glass_card"
+                android:padding="16dp" android:layout_marginEnd="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🌿" android:textSize="32sp" android:gravity="center"
+                        android:layout_marginBottom="6dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Eco Warrior" android:textColor="@color/text_primary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_medium" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="5,000 L saved" android:textColor="@color/text_tertiary"
+                        android:textSize="10sp" android:fontFamily="@font/sf_pro_display_regular" android:gravity="center" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_width="0dp" android:layout_height="120dp"
+                android:layout_weight="1" android:background="@drawable/bg_glass_chip"
+                android:padding="16dp" android:layout_marginStart="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🏆" android:textSize="32sp" android:alpha="0.3" android:gravity="center"
+                        android:layout_marginBottom="6dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Monsoon Hero" android:textColor="@color/text_tertiary"
+                        android:textSize="12sp" android:fontFamily="@font/sf_pro_display_medium" android:gravity="center" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="50,000 L needed" android:textColor="@color/text_tertiary"
+                        android:textSize="10sp" android:fontFamily="@font/sf_pro_display_regular" android:gravity="center" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

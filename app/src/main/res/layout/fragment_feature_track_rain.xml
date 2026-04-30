@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fragment_feature_track_rain.xml — Track Rain Entry screen -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:paddingTop="116dp"
+    android:paddingBottom="160dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
+
+        <!-- Hero Banner -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/bg_glass_water_card"
+            android:layout_marginBottom="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp">
+                <ImageView android:layout_width="56dp" android:layout_height="56dp"
+                    android:src="@drawable/ic_cloud_rain" android:tint="@color/accent_teal"
+                    android:layout_marginBottom="12dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Track Rain Entry"
+                    android:textColor="@color/text_primary" android:textSize="22sp"
+                    android:fontFamily="@font/sf_pro_display_medium" android:gravity="center" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Log today's rainfall and calculate how much water your roof harvested"
+                    android:textColor="@color/text_secondary" android:textSize="13sp"
+                    android:fontFamily="@font/sf_pro_display_regular" android:gravity="center"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Rainfall Input Card -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:padding="20dp"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="RAINFALL AMOUNT"
+                    android:textColor="@color/accent_teal" android:textSize="10sp"
+                    android:fontFamily="@font/sf_pro_display_medium" android:letterSpacing="0.12"
+                    android:layout_marginBottom="12dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="42"
+                        android:textColor="@color/accent_teal" android:textSize="52sp"
+                        android:fontFamily="@font/sf_pro_display_medium" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="mm"
+                        android:textColor="@color/text_secondary" android:textSize="20sp"
+                        android:fontFamily="@font/sf_pro_display_regular" android:layout_marginStart="8dp" />
+                </LinearLayout>
+                <!-- Simple slider placeholder -->
+                <SeekBar
+                    android:id="@+id/seekRainfall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="200"
+                    android:progress="42"
+                    android:layout_marginTop="12dp"
+                    android:progressTint="@color/accent_teal"
+                    android:thumbTint="@color/accent_teal" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginTop="6dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0 mm" android:textColor="@color/text_tertiary" android:textSize="11sp" />
+                    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="200 mm" android:textColor="@color/text_tertiary" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Calculated Harvest -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:padding="20dp"
+            android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="ESTIMATED HARVEST"
+                    android:textColor="@color/text_tertiary" android:textSize="10sp"
+                    android:fontFamily="@font/sf_pro_display_medium" android:letterSpacing="0.12"
+                    android:layout_marginBottom="16dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="2,340"
+                            android:textColor="@color/accent_teal" android:textSize="28sp"
+                            android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Litres collected"
+                            android:textColor="@color/text_secondary" android:textSize="12sp"
+                            android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="match_parent"
+                        android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="₹58"
+                            android:textColor="@color/accent_lime" android:textSize="28sp"
+                            android:fontFamily="@font/sf_pro_display_medium" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Money saved"
+                            android:textColor="@color/text_secondary" android:textSize="12sp"
+                            android:fontFamily="@font/sf_pro_display_regular" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Date & Notes -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_calendar" android:tint="@color/accent_teal"
+                        android:layout_marginEnd="12dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Today, 26 April 2026"
+                        android:textColor="@color/text_primary" android:textSize="15sp"
+                        android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="#1AFFFFFF" android:layout_marginBottom="16dp" />
+                <EditText
+                    android:id="@+id/etNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:hint="Add notes (optional)..."
+                    android:textColorHint="@color/text_tertiary"
+                    android:textColor="@color/text_primary"
+                    android:background="@null"
+                    android:textSize="14sp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:fontFamily="@font/sf_pro_display_regular" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- CTA Button -->
+        <FrameLayout
+            android:id="@+id/btnSaveEntry"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_button_primary"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Save Entry"
+                android:textColor="@color/text_on_light_glass" android:textSize="16sp"
+                android:fontFamily="@font/sf_pro_display_medium" />
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>
