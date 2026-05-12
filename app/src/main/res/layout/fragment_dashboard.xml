@@ -235,20 +235,22 @@
                     android:paddingEnd="@dimen/space_12"
                     android:paddingTop="6dp"
                     android:paddingBottom="6dp">
-                    
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
-                        
+
                         <View
+                            android:id="@+id/dotTankStatus"
                             android:layout_width="8dp"
                             android:layout_height="8dp"
                             android:background="@drawable/bg_notification_badge"
                             android:backgroundTint="@color/accent_teal" />
-                        
+
                         <TextView
+                            android:id="@+id/tvTankStatus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"

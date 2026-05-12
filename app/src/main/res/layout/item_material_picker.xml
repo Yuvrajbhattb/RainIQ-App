@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Dropdown item for the inline roof material picker -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dropdownItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:paddingStart="8dp"
-    android:paddingEnd="8dp"
-    android:textColor="@color/text_primary"
-    android:textSize="16sp"
-    android:fontFamily="@font/sf_pro_display_medium"
-    android:background="?attr/selectableItemBackground"/>
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/text_primary"
+        android:textSize="15sp"
+        android:fontFamily="@font/sf_pro_display_medium" />
+
+    <TextView
+        android:id="@+id/tvItemCoeff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_tertiary"
+        android:textSize="13sp"
+        android:fontFamily="@font/sf_pro_display_regular" />
+
+</LinearLayout>

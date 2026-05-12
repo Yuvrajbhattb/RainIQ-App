@@ -4,14 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.OvershootInterpolator
+import android.widget.LinearLayout
+import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rainiq.R
 import com.rainiq.data.preferences.UserPreferences
 import com.rainiq.databinding.FragmentOnboardingSetupBinding
@@ -74,24 +76,52 @@ class SetupFormFragment : Fragment() {
     }
 
     private fun showMaterialPicker() {
-        val bottomSheet = BottomSheetDialog(requireContext(), com.google.android.material.R.style.Theme_Design_BottomSheetDialog)
-        val view = layoutInflater.inflate(R.layout.layout_material_picker, null)
-        val container = view.findViewById<android.widget.LinearLayout>(R.id.pickerContainer)
+        val anchor = binding.tvRoofMaterial
+
+        // Build the popup content
+        val popupView = layoutInflater.inflate(R.layout.layout_material_picker, null, false)
+        val container = popupView.findViewById<LinearLayout>(R.id.pickerContainer)
+
+        // We'll hold a reference so items can dismiss it
+        val popup = PopupWindow(
+            popupView,
+            anchor.width,                         // exactly the same width as the field
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            true                                   // focusable so back/outside tap dismisses
+        )
+        popup.elevation = 24f
+        popup.isOutsideTouchable = true
+        popup.setBackgroundDrawable(
+            requireContext().getDrawable(R.drawable.bg_dropdown_popup)
+        )
 
         roofMaterials.forEach { (name, coeff) ->
-            val item = layoutInflater.inflate(R.layout.item_material_picker, container, false) as TextView
-            item.text = "$name  (×$coeff)"
+            val item = layoutInflater.inflate(R.layout.item_material_picker, container, false)
+            item.findViewById<TextView>(R.id.tvItemName).text = name
+            item.findViewById<TextView>(R.id.tvItemCoeff).text = "×$coeff"
             item.setOnClickListener {
                 selectedRunoff = coeff
-                binding.tvRoofMaterial.text = item.text
+                binding.tvRoofMaterial.text = "$name  (×$coeff)"
                 updatePreview()
-                bottomSheet.dismiss()
+                popup.dismiss()
             }
             container.addView(item)
         }
 
-        bottomSheet.setContentView(view)
-        bottomSheet.show()
+        // Animate in: start scaled down, fade in
+        popupView.scaleY = 0.85f
+        popupView.alpha = 0f
+        popupView.pivotY = 0f          // scale from the top edge
+
+        // Show anchored directly below the field
+        popup.showAsDropDown(anchor, 0, 4)
+
+        popupView.animate()
+            .scaleY(1f)
+            .alpha(1f)
+            .setDuration(200)
+            .setInterpolator(DecelerateInterpolator(2f))
+            .start()
     }
 
     private fun setupTextWatchers() {

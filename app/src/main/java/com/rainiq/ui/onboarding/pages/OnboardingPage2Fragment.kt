@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.rainiq.databinding.FragmentOnboardingPage2Binding
 
@@ -26,6 +28,13 @@ class OnboardingPage2Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Apply real status bar inset so content clears it on every device
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
+            val contentPadding = statusBarHeight + resources.getDimensionPixelSize(com.rainiq.R.dimen.onboarding_content_top_padding)
+            v.setPadding(v.paddingLeft, contentPadding, v.paddingRight, v.paddingBottom)
+            insets
+        }
         binding.tvLabel.alpha = 0f
         binding.tvHeadline.alpha = 0f
         binding.illustrationFrame.alpha = 0f

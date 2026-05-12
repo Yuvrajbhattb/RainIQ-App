@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.rainiq.databinding.FragmentOnboardingPage3Binding
 
 /**
  * OnboardingPage3Fragment — "Your AI water wisdom companion"
- * Gemini AI badge, headline + AI avatar, static chat mockup, feature tiles.
+ * Gemini AI badge, full-width headline + subtitle, polished AI chat preview card,
+ * and three horizontal feature rows in a unified glass card.
  */
 class OnboardingPage3Fragment : Fragment() {
 
@@ -26,6 +29,15 @@ class OnboardingPage3Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Apply real status bar inset so content clears it on every device
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->
+            val statusBarHeight = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
+            val contentPadding = statusBarHeight + resources.getDimensionPixelSize(com.rainiq.R.dimen.onboarding_content_top_padding)
+            // The scrollable content is the ScrollView's child LinearLayout
+            val contentLayout = binding.root.getChildAt(0) as? android.view.ViewGroup
+            contentLayout?.setPadding(contentLayout.paddingLeft, contentPadding, contentLayout.paddingRight, contentLayout.paddingBottom)
+            insets
+        }
         resetState()
     }
 
@@ -33,7 +45,6 @@ class OnboardingPage3Fragment : Fragment() {
         binding.tvLabel.alpha = 0f
         binding.tvHeadline.alpha = 0f
         binding.tvSubtitle.alpha = 0f
-        binding.aiAvatar.alpha = 0f
         binding.chatContainer.alpha = 0f
         binding.featureCards.alpha = 0f
     }
@@ -48,23 +59,25 @@ class OnboardingPage3Fragment : Fragment() {
         resetState()
         val interp = DecelerateInterpolator(2f)
 
+        // Badge fades + slides up
         binding.tvLabel.animate().alpha(1f).translationYBy(-20f).setDuration(400)
             .setInterpolator(interp).setStartDelay(60).start()
 
+        // Headline fades + slides up
         binding.tvHeadline.animate().alpha(1f).translationYBy(-24f).setDuration(500)
             .setInterpolator(interp).setStartDelay(160).start()
 
+        // Subtitle fades in shortly after
         binding.tvSubtitle.animate().alpha(1f).translationYBy(-16f).setDuration(460)
-            .setInterpolator(interp).setStartDelay(260).start()
+            .setInterpolator(interp).setStartDelay(280).start()
 
-        binding.aiAvatar.animate().alpha(1f).scaleX(1f).scaleY(1f).setDuration(500)
-            .setInterpolator(interp).setStartDelay(200).start()
+        // Chat card reveals with a slight upward drift
+        binding.chatContainer.animate().alpha(1f).translationYBy(-18f).setDuration(520)
+            .setInterpolator(interp).setStartDelay(440).start()
 
-        binding.chatContainer.animate().alpha(1f).translationYBy(-16f).setDuration(500)
-            .setInterpolator(interp).setStartDelay(500).start()
-
-        binding.featureCards.animate().alpha(1f).translationYBy(-12f).setDuration(480)
-            .setInterpolator(interp).setStartDelay(750).start()
+        // Feature rows card fades in last
+        binding.featureCards.animate().alpha(1f).translationYBy(-14f).setDuration(480)
+            .setInterpolator(interp).setStartDelay(680).start()
     }
 
     override fun onDestroyView() {

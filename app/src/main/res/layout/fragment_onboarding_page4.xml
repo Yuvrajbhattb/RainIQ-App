@@ -43,6 +43,7 @@
                 android:id="@+id/tvLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="3dp"
                 android:text="REAL WORLD IMPACT"
                 android:textColor="@color/accent_lime"
                 android:textSize="11sp"

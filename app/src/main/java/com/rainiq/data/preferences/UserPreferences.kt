@@ -20,6 +20,10 @@ class UserPreferences(context: Context) {
         get() = prefs.getBoolean(KEY_ONBOARDING_DONE, false)
         set(value) = prefs.edit().putBoolean(KEY_ONBOARDING_DONE, value).apply()
 
+    var userName: String
+        get() = prefs.getString(KEY_USER_NAME, "") ?: ""
+        set(value) = prefs.edit().putString(KEY_USER_NAME, value).apply()
+
     // ─────────────────────────────────────────────────────────
     // Roof Setup
     // ─────────────────────────────────────────────────────────
@@ -44,6 +48,11 @@ class UserPreferences(context: Context) {
         get() = prefs.getString(KEY_CITY, "") ?: ""
         set(value) = prefs.edit().putString(KEY_CITY, value).apply()
 
+    /** Auto-calculated once at end of onboarding. Used as the Home screen monthly goal. */
+    var monthlyGoalLiters: Float
+        get() = prefs.getFloat(KEY_MONTHLY_GOAL, 0f)
+        set(value) = prefs.edit().putFloat(KEY_MONTHLY_GOAL, value).apply()
+
     /**
      * Saves all roof setup data atomically.
      */
@@ -54,12 +63,15 @@ class UserPreferences(context: Context) {
         runoffCoefficient: Float,
         city: String
     ) {
+        val monthlyGoal = com.rainiq.domain.calculator.HarvestCalculator
+            .estimateMonthlyGoal(roofArea, runoffCoefficient)
         prefs.edit()
             .putFloat(KEY_ROOF_AREA, roofArea)
             .putFloat(KEY_TANK_CAPACITY, tankCapacity)
             .putString(KEY_ROOF_MATERIAL, roofMaterial)
             .putFloat(KEY_RUNOFF_COEFFICIENT, runoffCoefficient)
             .putString(KEY_CITY, city)
+            .putFloat(KEY_MONTHLY_GOAL, monthlyGoal)
             .putBoolean(KEY_ONBOARDING_DONE, true)
             .apply()
     }
@@ -71,10 +83,12 @@ class UserPreferences(context: Context) {
     companion object {
         private const val PREFS_NAME = "jal_sanchay_prefs"
         const val KEY_ONBOARDING_DONE = "onboarding_done"
+        const val KEY_USER_NAME = "user_name"
         const val KEY_ROOF_AREA = "roof_area"
         const val KEY_TANK_CAPACITY = "tank_capacity"
         const val KEY_ROOF_MATERIAL = "roof_material"
         const val KEY_RUNOFF_COEFFICIENT = "runoff_coefficient"
         const val KEY_CITY = "city"
+        const val KEY_MONTHLY_GOAL = "monthly_goal_liters"
     }
 }

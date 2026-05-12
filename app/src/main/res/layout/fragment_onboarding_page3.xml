@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     fragment_onboarding_page3.xml
-    Screen 3: "Your AI water wisdom companion"
-    Fixes: paddingTop 88dp, equal-height tiles via baselineAligned+minHeight,
-    consistent tile structure (icon + title + subtitle on all 3), pro spacing.
+    Screen 3: "Your AI water wisdom companion" — Redesigned
+    Layout:
+      1. POWERED BY GEMINI AI badge
+      2. Full-width headline + subtitle (no competing avatar orb)
+      3. Polished AI chat preview card (teal glow, pill bubbles, header row)
+      4. Three full-width horizontal feature rows inside one glass card
 -->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +22,7 @@
         android:orientation="vertical"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
-        android:paddingTop="56dp"
+        android:paddingTop="16dp"
         android:paddingBottom="172dp">
 
         <!-- ── GEMINI AI BADGE ── -->
@@ -51,6 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
+                    android:paddingTop="3dp"
                     android:text="POWERED BY GEMINI AI"
                     android:textColor="@color/accent_lime"
                     android:textSize="10sp"
@@ -59,76 +63,44 @@
             </LinearLayout>
         </FrameLayout>
 
-        <!-- ── HEADLINE + AI AVATAR ROW ── -->
-        <LinearLayout
+        <!-- ── FULL-WIDTH HEADLINE ── -->
+        <TextView
+            android:id="@+id/tvHeadline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="14dp"
-            android:gravity="center_vertical">
+            android:text="Your AI water\nwisdom companion."
+            android:textSize="32sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:letterSpacing="-0.020"
+            android:lineSpacingExtra="2sp"
+            android:alpha="0" />
 
-            <!-- Left: headline + subtitle -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+        <!-- ── SUBTITLE ── -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ask questions. Get instant answers.\nGrow smarter with every drop."
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:lineSpacingExtra="4sp"
+            android:alpha="0" />
 
-                <TextView
-                    android:id="@+id/tvHeadline"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Your AI water\nwisdom companion."
-                    android:textSize="30sp"
-                    android:textColor="@color/text_primary"
-                    android:fontFamily="@font/sf_pro_display_bold"
-                    android:letterSpacing="-0.018"
-                    android:lineSpacingExtra="2sp"
-                    android:alpha="0" />
-
-                <TextView
-                    android:id="@+id/tvSubtitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Ask. Get answers. Grow smarter with every drop."
-                    android:textSize="13sp"
-                    android:textColor="@color/text_secondary"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:lineSpacingExtra="3sp"
-                    android:alpha="0" />
-            </LinearLayout>
-
-            <!-- Right: AI avatar orb -->
-            <FrameLayout
-                android:id="@+id/aiAvatar"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:layout_marginStart="14dp"
-                android:background="@drawable/bg_glass_ai_card"
-                android:alpha="0">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_sparkle"
-                    android:tint="@color/accent_teal"
-                    android:importantForAccessibility="no" />
-            </FrameLayout>
-        </LinearLayout>
-
-        <!-- ── CHAT MOCK CARD ── -->
+        <!-- ── AI CHAT PREVIEW CARD ── -->
         <FrameLayout
             android:id="@+id/chatContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_glass_card"
-            android:layout_marginTop="18dp"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
+            android:background="@drawable/bg_chat_card_teal"
+            android:layout_marginTop="22dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:paddingTop="14dp"
-            android:paddingBottom="14dp"
+            android:paddingBottom="16dp"
             android:alpha="0">
 
             <LinearLayout
@@ -136,63 +108,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- User message row -->
-                <LinearLayout
-                    android:id="@+id/bubbleUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="end|center_vertical">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:paddingEnd="10dp"
-                        android:text="What can I grow with 500L?"
-                        android:textColor="@color/text_primary"
-                        android:textSize="13sp"
-                        android:fontFamily="@font/sf_pro_display_regular" />
-
-                    <FrameLayout
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/bg_glass_chip">
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_user"
-                            android:tint="@color/text_secondary"
-                            android:importantForAccessibility="no" />
-                    </FrameLayout>
-                </LinearLayout>
-
-                <!-- User timestamp -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="4:09 PM ✓✓"
-                    android:textColor="@color/text_tertiary"
-                    android:textSize="10sp"
-                    android:fontFamily="@font/sf_pro_display_regular" />
-
-                <!-- AI response row -->
+                <!-- Card header: AI label + live dot -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="top">
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
 
-                    <!-- AI avatar bubble -->
                     <FrameLayout
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginEnd="10dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
                         android:background="@drawable/bg_glass_ai_card">
                         <ImageView
                             android:layout_width="14dp"
@@ -203,204 +129,279 @@
                             android:importantForAccessibility="no" />
                     </FrameLayout>
 
-                    <!-- AI text bubble -->
-                    <FrameLayout
-                        android:id="@+id/bubbleAi"
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/bg_inner_card"
-                        android:padding="12dp">
+                        android:layout_marginStart="8dp"
+                        android:text="RainIQ AI"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/sf_pro_display_bold" />
 
-                        <TextView
-                            android:id="@+id/tvAiResponse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="With 500L you can grow tomatoes 🍅, coriander 🌿, and mint 🌱.\n\nI'll build your personalized watering schedule!"
-                            android:textColor="@color/text_primary"
-                            android:textSize="13sp"
-                            android:fontFamily="@font/sf_pro_display_regular"
-                            android:lineSpacingExtra="3sp" />
-                    </FrameLayout>
+                    <!-- Live indicator dot -->
+                    <View
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:background="@drawable/bg_onboarding_dot_active"
+                        android:layout_marginEnd="5dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Live"
+                        android:textColor="@color/accent_teal"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/sf_pro_display_medium" />
                 </LinearLayout>
 
-                <!-- AI timestamp -->
-                <TextView
-                    android:layout_width="wrap_content"
+                <!-- User message bubble (right-aligned) -->
+                <LinearLayout
+                    android:id="@+id/bubbleUser"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginStart="40dp"
-                    android:text="4:09 PM"
-                    android:textColor="@color/text_tertiary"
-                    android:textSize="10sp"
-                    android:fontFamily="@font/sf_pro_display_regular" />
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:layout_marginBottom="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_chat_user_bubble"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:text="What can I grow with 500L?"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
+
+                <!-- AI response bubble (left-aligned) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <FrameLayout
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/bg_glass_ai_card">
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_sparkle"
+                            android:tint="@color/accent_teal"
+                            android:importantForAccessibility="no" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvAiResponse"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_chat_ai_bubble"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingTop="9dp"
+                        android:paddingBottom="9dp"
+                        android:text="With 500L you can grow tomatoes 🍅, coriander 🌿, and mint 🌱. I'll build your personalized watering schedule!"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:lineSpacingExtra="3sp" />
+                </LinearLayout>
 
                 <!-- Hidden stubs to satisfy old binding references -->
                 <View android:id="@+id/thinkingDots" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
                 <View android:id="@+id/dot1" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
                 <View android:id="@+id/dot2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
                 <View android:id="@+id/dot3" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                <!-- Hidden aiAvatar stub — kept so Fragment binding doesn't crash -->
+                <FrameLayout
+                    android:id="@+id/aiAvatar"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
             </LinearLayout>
         </FrameLayout>
 
-        <!-- ── "I CAN HELP YOU WITH" LABEL ── -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="10dp"
-            android:text="I CAN HELP YOU WITH"
-            android:textColor="@color/accent_lime"
-            android:textSize="10sp"
-            android:fontFamily="@font/sf_pro_display_bold"
-            android:letterSpacing="0.12" />
-
-        <!--
-            ── FEATURE TILES ──
-            All 3 cards are IDENTICAL in structure: icon box + title + subtitle.
-            Parent uses baselineAligned="false" so all children stretch to the
-            same height as the tallest card automatically.
-        -->
+        <!-- ── FEATURE ROWS — three horizontal items inside one card ── -->
         <LinearLayout
             android:id="@+id/featureCards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:background="@drawable/bg_glass_card"
+            android:layout_marginTop="20dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
             android:alpha="0">
 
-            <!-- ── Tile 1: Smart Recommendations ── -->
+            <!-- Row 1: Smart Recommendations -->
             <LinearLayout
                 android:id="@+id/card1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/bg_glass_card"
-                android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginEnd="5dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp">
 
                 <FrameLayout
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_glass_chip"
-                    android:layout_marginBottom="10dp">
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_glass_chip">
                     <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_sparkle"
                         android:tint="@color/accent_teal"
                         android:importantForAccessibility="no" />
                 </FrameLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Smart\nRecommendations"
-                    android:textColor="@color/text_primary"
-                    android:textSize="11sp"
-                    android:fontFamily="@font/sf_pro_display_bold"
-                    android:lineSpacingExtra="2sp" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Based on your roof size"
-                    android:textColor="@color/text_tertiary"
-                    android:textSize="9sp"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:lineSpacingExtra="2sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Smart Recommendations"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/sf_pro_display_bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Based on your roof size &amp; rainfall"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- ── Tile 2: Personalized Insights ── -->
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_glass_dark" />
+
+            <!-- Row 2: Personalized Insights -->
             <LinearLayout
                 android:id="@+id/card2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/bg_glass_card"
-                android:orientation="vertical"
-                android:padding="12dp"
-                android:layout_marginEnd="5dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp">
 
                 <FrameLayout
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_glass_chip"
-                    android:layout_marginBottom="10dp">
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_glass_chip">
                     <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_chart_bar"
-                        android:tint="@color/accent_teal"
+                        android:tint="@color/accent_lime"
                         android:importantForAccessibility="no" />
                 </FrameLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Personalized\nInsights"
-                    android:textColor="@color/text_primary"
-                    android:textSize="11sp"
-                    android:fontFamily="@font/sf_pro_display_bold"
-                    android:lineSpacingExtra="2sp" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Tips based on your data"
-                    android:textColor="@color/text_tertiary"
-                    android:textSize="9sp"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:lineSpacingExtra="2sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personalized Insights"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/sf_pro_display_bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Tips tailored to your harvest data"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- ── Tile 3: Watering Planner ── -->
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_glass_dark" />
+
+            <!-- Row 3: Watering Planner -->
             <LinearLayout
                 android:id="@+id/card3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/bg_glass_card"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp">
 
                 <FrameLayout
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@drawable/bg_glass_chip"
-                    android:layout_marginBottom="10dp">
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_glass_chip">
                     <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_calendar"
-                        android:tint="@color/accent_teal"
+                        android:tint="@color/accent_orange"
                         android:importantForAccessibility="no" />
                 </FrameLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Watering\nPlanner"
-                    android:textColor="@color/text_primary"
-                    android:textSize="11sp"
-                    android:fontFamily="@font/sf_pro_display_bold"
-                    android:lineSpacingExtra="2sp" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="I'll create the schedule"
-                    android:textColor="@color/text_tertiary"
-                    android:textSize="9sp"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:lineSpacingExtra="2sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Watering Planner"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/sf_pro_display_bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Your custom schedule, auto-generated"
+                        android:textColor="@color/text_tertiary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

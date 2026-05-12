@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -88,9 +89,10 @@ dependencies {
     // Lottie animations
     implementation("com.airbnb.android:lottie:6.4.0")
 
-    // Room DB (for later phases)
+    // Room DB
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
 
     // WorkManager (for later phases)
     implementation("androidx.work:work-runtime-ktx:2.10.0")
