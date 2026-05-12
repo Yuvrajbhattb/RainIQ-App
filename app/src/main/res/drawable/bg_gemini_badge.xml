@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gemini AI badge pill — dark glass with lime border -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#441C2E1A" />
+    <stroke
+        android:width="1dp"
+        android:color="#55C8E632" />
+    <corners android:radius="100dp" />
+</shape>

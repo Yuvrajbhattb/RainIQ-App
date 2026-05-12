@@ -32,14 +32,26 @@
         android:paddingEnd="24dp"
         android:paddingBottom="40dp">
 
-        <!-- Dots indicator row -->
-        <LinearLayout
-            android:id="@+id/dotsContainer"
+        <!-- Dots indicator: frosted glass pill wrapping the individual dots -->
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_onboarding_dots_pill"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+
+            <LinearLayout
+                android:id="@+id/dotsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical" />
+
+        </FrameLayout>
 
         <!-- Next / Get Started button -->
         <FrameLayout

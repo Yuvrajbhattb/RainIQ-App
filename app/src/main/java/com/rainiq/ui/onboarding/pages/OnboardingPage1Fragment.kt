@@ -10,7 +10,7 @@ import com.rainiq.databinding.FragmentOnboardingPage1Binding
 
 /**
  * OnboardingPage1Fragment — "Every Drop, Counted"
- * Shows animated rain illustration and hero text with fade+slide-up entrance.
+ * Full-bleed illustration with hero text fade+slide-up entrance.
  */
 class OnboardingPage1Fragment : Fragment() {
 
@@ -26,38 +26,31 @@ class OnboardingPage1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // Reset to invisible state for re-animation when revisited
+        binding.tvHeadlinePart1.alpha = 0f
         binding.tvHeadline.alpha = 0f
         binding.tvSubtitle.alpha = 0f
-        binding.chipTagline.alpha = 0f
     }
 
     override fun onResume() {
         super.onResume()
-        if (_binding != null) {
-            startEntryAnimation()
-        }
+        if (_binding != null) startEntryAnimation()
     }
 
-    /** Called by OnboardingActivity when this page becomes visible */
     fun startEntryAnimation() {
         if (_binding == null) return
         val interp = DecelerateInterpolator(2f)
 
-        // Headline slides up + fades in
+        binding.tvHeadlinePart1
+            .animate().alpha(1f).translationYBy(-24f).setDuration(500)
+            .setInterpolator(interp).setStartDelay(80).start()
+
         binding.tvHeadline
             .animate().alpha(1f).translationYBy(-24f).setDuration(500)
-            .setInterpolator(interp).setStartDelay(100).start()
+            .setInterpolator(interp).setStartDelay(180).start()
 
-        // Subtitle
         binding.tvSubtitle
-            .animate().alpha(1f).translationYBy(-20f).setDuration(500)
-            .setInterpolator(interp).setStartDelay(250).start()
-
-        // Chip
-        binding.chipTagline
-            .animate().alpha(1f).translationYBy(-16f).setDuration(450)
-            .setInterpolator(interp).setStartDelay(400).start()
+            .animate().alpha(1f).translationYBy(-16f).setDuration(480)
+            .setInterpolator(interp).setStartDelay(320).start()
     }
 
     override fun onDestroyView() {

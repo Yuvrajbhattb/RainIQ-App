@@ -1,95 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     fragment_onboarding_page2.xml
-    Screen 2: "Your Rooftop Is Worth More" — water conversion animation
+    Screen 2: "Your roof harvests water every monsoon"
+    - DID YOU KNOW? + headline at top (paddingTop 88dp to clear status bar)
+    - Illustration fills flexible middle (layout_weight=1)
+    - 3 info pills anchored at bottom with paddingBottom=160dp to clear dots+button
+    - Chip lives inside illustration frame only (clipped)
 -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_deepest"
     android:orientation="vertical"
-    android:paddingStart="28dp"
-    android:paddingEnd="28dp">
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="56dp"
+    android:paddingBottom="160dp">
 
-    <!-- Top label -->
+    <!-- "DID YOU KNOW?" label -->
     <TextView
         android:id="@+id/tvLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:text="DID YOU KNOW?"
         android:textColor="@color/accent_lime"
-        android:textSize="15sp"
+        android:textSize="11sp"
         android:fontFamily="@font/sf_pro_display_medium"
-        android:letterSpacing="0.1"
+        android:letterSpacing="0.12"
         android:alpha="0" />
 
     <!-- Headline -->
     <TextView
         android:id="@+id/tvHeadline"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:text="Your roof harvests\nwater every monsoon."
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:textColor="@color/text_primary"
-        android:fontFamily="@font/sf_pro_display_medium"
+        android:fontFamily="@font/sf_pro_display_bold"
         android:letterSpacing="-0.018"
-        android:lineSpacingExtra="4sp"
+        android:lineSpacingExtra="2sp"
         android:alpha="0" />
 
-    <!-- Water Conversion Illustration -->
-    <com.rainiq.components.WaterConversionView
-        android:id="@+id/waterConversionView"
+    <!-- Illustration — grows to fill all remaining space, pushes pills down.
+         clipChildren=true ensures the +2.340L chip is clipped inside the frame. -->
+    <FrameLayout
+        android:id="@+id/illustrationFrame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="24dp" />
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:alpha="0">
 
-    <!-- Glass info card -->
-    <FrameLayout
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/illustration2"
+            android:importantForAccessibility="no" />
+
+        <!-- "+2.340 L / This monsoon" floating chip — stays inside the frame -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_glass_card"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_drop"
+                    android:tint="@color/accent_teal"
+                    android:importantForAccessibility="no" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+2.340 L"
+                        android:textColor="@color/text_primary"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/sf_pro_display_bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="This monsoon"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="9sp"
+                        android:fontFamily="@font/sf_pro_display_regular" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- 3 info pills — sit above the dots+button overlay (cleared by paddingBottom=160dp) -->
+    <LinearLayout
         android:id="@+id/infoCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_glass_card"
-        android:padding="18dp"
-        android:layout_marginBottom="180dp"
+        android:orientation="vertical"
         android:alpha="0">
 
+        <!-- Row 1: 100 sq ft roof → 2,340 L / monsoon -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@drawable/bg_onboarding_info_row"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="A 100 sq ft concrete roof can harvest up to 2,340 L in a single monsoon season."
-                android:textSize="15sp"
+                android:layout_weight="1"
+                android:text="100 sq ft roof"
                 android:textColor="@color/text_primary"
-                android:fontFamily="@font/sf_pro_display_medium"
-                android:lineSpacingExtra="4sp" />
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_medium" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="We calculate it automatically using your roof area, type, and local rainfall data."
-                android:textSize="13sp"
-                android:textColor="@color/text_secondary"
-                android:fontFamily="@font/sf_pro_display_regular"
-                android:lineSpacingExtra="4sp" />
-
-            <!-- Clean metric tag -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Area × Rainfall × Runoff = 💧 Liters"
+                android:text="2,340 L / monsoon"
                 android:textColor="@color/accent_teal"
-                android:textSize="13sp"
-                android:fontFamily="@font/sf_pro_display_medium"
-                android:letterSpacing="0.05" />
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_bold" />
         </LinearLayout>
-    </FrameLayout>
+
+        <!-- Row 2: Auto-calculated → Area × Rain × Runoff -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_onboarding_info_row"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Auto-calculated"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Area × Rain × Runoff"
+                android:textColor="@color/accent_lime"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_bold" />
+        </LinearLayout>
+
+        <!-- Row 3: Works offline → No internet needed -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_onboarding_info_row"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Works offline"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No internet needed"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:fontFamily="@font/sf_pro_display_bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

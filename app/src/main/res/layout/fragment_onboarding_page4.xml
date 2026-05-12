@@ -1,68 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     fragment_onboarding_page4.xml
-    Screen 4: "Track. Achieve. Impact." — impact counters + badges
+    Screen 4: "See the impact of every drop" — Real World Impact
+    Illustration fills top ~50% of screen.
+    Label + headline + stats card sit in clean dark section below.
 -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingStart="28dp"
-    android:paddingEnd="28dp">
+    android:background="@color/bg_deepest"
+    android:orientation="vertical">
 
-    <!-- Label -->
-    <TextView
-        android:id="@+id/tvLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="REAL WORLD IMPACT"
-        android:textColor="@color/accent_lime"
-        android:textSize="12sp"
-        android:fontFamily="@font/sf_pro_display_medium"
-        android:letterSpacing="0.1"
-        android:alpha="0" />
-
-    <!-- Headline -->
-    <TextView
-        android:id="@+id/tvHeadline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Track. Achieve.\nMake an Impact."
-        android:textSize="32sp"
-        android:textColor="@color/text_primary"
-        android:fontFamily="@font/sf_pro_display_medium"
-        android:letterSpacing="-0.018"
-        android:lineSpacingExtra="4sp"
-        android:alpha="0" />
-
-    <!-- Sub-headline -->
-    <TextView
-        android:id="@+id/tvSubtitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Every liter logged shows you real-world impact — household days powered, trees watered, and money saved."
-        android:textSize="14sp"
-        android:textColor="@color/text_secondary"
-        android:fontFamily="@font/sf_pro_display_regular"
-        android:lineSpacingExtra="4sp"
-        android:alpha="0" />
-
-    <!-- Impact Counter Custom View -->
-    <com.rainiq.components.ImpactCounterView
-        android:id="@+id/impactCounterView"
+    <!-- Illustration — takes top 42% of the screen -->
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_weight="42"
+        android:scaleType="centerCrop"
+        android:src="@drawable/illustration4"
+        android:importantForAccessibility="no" />
 
-    <!-- Bottom placeholder to leave room for nav controls -->
-    <View
+    <!-- Text + stats section — clean dark background, bottom 58% -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="180dp" />
+        android:layout_height="0dp"
+        android:layout_weight="58"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="164dp">
+
+            <!-- "REAL WORLD IMPACT" label -->
+            <TextView
+                android:id="@+id/tvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REAL WORLD IMPACT"
+                android:textColor="@color/accent_lime"
+                android:textSize="11sp"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:letterSpacing="0.12"
+                android:alpha="0" />
+
+            <!-- "See the impact of" — white -->
+            <TextView
+                android:id="@+id/tvHeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="See the impact of"
+                android:textSize="28sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:letterSpacing="-0.020"
+                android:alpha="0" />
+
+            <!-- "every drop." — lime -->
+            <TextView
+                android:id="@+id/tvHeadlineLime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="every drop."
+                android:textSize="28sp"
+                android:textColor="@color/accent_lime"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:letterSpacing="-0.020"
+                android:alpha="0" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Save water, grow more, and reduce costs - all from your rooftop."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:lineSpacingExtra="4sp"
+                android:alpha="0" />
+
+            <!-- 3-column stats card -->
+            <FrameLayout
+                android:id="@+id/impactCounterView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_glass_card"
+                android:padding="16dp"
+                android:alpha="0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Stat 1: Trees supported -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_plant"
+                            android:tint="@color/accent_lime"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="18"
+                            android:textColor="@color/accent_lime"
+                            android:textSize="26sp"
+                            android:fontFamily="@font/sf_pro_display_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Trees supported"
+                            android:textColor="@color/text_primary"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Helping the planet grow greener"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="9sp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/border_glass_dark"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp" />
+
+                    <!-- Stat 2: Water saved -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_drop"
+                            android:tint="@color/accent_teal"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="2340 L"
+                            android:textColor="@color/accent_teal"
+                            android:textSize="22sp"
+                            android:fontFamily="@font/sf_pro_display_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Water saved"
+                            android:textColor="@color/text_primary"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Precious water saved for future"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="9sp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/border_glass_dark"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp" />
+
+                    <!-- Stat 3: Money saved -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_trophy"
+                            android:tint="@color/accent_orange"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="₹1200"
+                            android:textColor="@color/accent_orange"
+                            android:textSize="22sp"
+                            android:fontFamily="@font/sf_pro_display_bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Money saved"
+                            android:textColor="@color/text_primary"
+                            android:textSize="11sp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Lower bills and higher savings"
+                            android:textColor="@color/text_tertiary"
+                            android:textSize="9sp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import com.rainiq.databinding.FragmentOnboardingPage4Binding
 
 /**
- * OnboardingPage4Fragment — "Track. Achieve. Impact."
- * Shows animated triple impact counters + badge pop-in via ImpactCounterView.
+ * OnboardingPage4Fragment — "See the impact of every drop"
+ * Full-bleed illustration4, Real World Impact label, headline, and stats card.
  */
 class OnboardingPage4Fragment : Fragment() {
 
@@ -28,14 +28,14 @@ class OnboardingPage4Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.tvLabel.alpha = 0f
         binding.tvHeadline.alpha = 0f
+        binding.tvHeadlineLime.alpha = 0f
         binding.tvSubtitle.alpha = 0f
+        binding.impactCounterView.alpha = 0f
     }
 
     override fun onResume() {
         super.onResume()
-        if (_binding != null) {
-            startEntryAnimation()
-        }
+        if (_binding != null) startEntryAnimation()
     }
 
     fun startEntryAnimation() {
@@ -48,12 +48,14 @@ class OnboardingPage4Fragment : Fragment() {
         binding.tvHeadline.animate().alpha(1f).translationYBy(-24f).setDuration(500)
             .setInterpolator(interp).setStartDelay(160).start()
 
-        binding.tvSubtitle.animate().alpha(1f).translationYBy(-16f).setDuration(450)
-            .setInterpolator(interp).setStartDelay(300).start()
+        binding.tvHeadlineLime.animate().alpha(1f).translationYBy(-24f).setDuration(500)
+            .setInterpolator(interp).setStartDelay(220).start()
 
-        // ImpactCounterView starts its own animations via init {}
-        // Re-trigger by requesting invalidate after a short delay
-        binding.impactCounterView.postDelayed({ binding.impactCounterView.invalidate() }, 200)
+        binding.tvSubtitle.animate().alpha(1f).translationYBy(-16f).setDuration(450)
+            .setInterpolator(interp).setStartDelay(340).start()
+
+        binding.impactCounterView.animate().alpha(1f).translationYBy(-16f).setDuration(500)
+            .setInterpolator(interp).setStartDelay(500).start()
     }
 
     override fun onDestroyView() {

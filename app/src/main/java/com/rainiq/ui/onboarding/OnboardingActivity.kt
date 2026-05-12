@@ -1,6 +1,5 @@
 package com.rainiq.ui.onboarding
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -79,56 +78,67 @@ class OnboardingActivity : AppCompatActivity() {
 
     private fun setupDots() {
         binding.dotsContainer.removeAllViews()
-        val dp6 = (6 * resources.displayMetrics.density).toInt()
-        val dp4 = (4 * resources.displayMetrics.density).toInt()
+        val density      = resources.displayMetrics.density
+        val activeDotW   = (22 * density).toInt()
+        val inactiveDotW = (6  * density).toInt()
+        val dotH         = (6  * density).toInt()
+        val gap          = (4  * density).toInt()
 
         repeat(TOTAL_PAGES - 1) { i ->
             val dot = View(this)
-            val params = LinearLayout.LayoutParams(dp6, dp6).apply {
-                marginEnd = dp4
-                marginStart = dp4
+            val isFirst = i == 0
+            val params = LinearLayout.LayoutParams(
+                if (isFirst) activeDotW else inactiveDotW,
+                dotH
+            ).apply {
+                if (i < TOTAL_PAGES - 2) marginEnd = gap
             }
             dot.layoutParams = params
-            dot.setBackgroundResource(com.rainiq.R.drawable.bg_notification_badge)
-            dot.backgroundTintList = android.content.res.ColorStateList.valueOf(
-                if (i == 0) Color.WHITE else Color.argb(128, 255, 255, 255)
+            dot.setBackgroundResource(
+                if (isFirst) com.rainiq.R.drawable.bg_onboarding_dot_active
+                else         com.rainiq.R.drawable.bg_onboarding_dot_inactive
             )
             binding.dotsContainer.addView(dot)
         }
     }
 
     private fun updateDots(position: Int) {
-        val displayPos = position.coerceAtMost(TOTAL_PAGES - 2)
+        val displayPos   = position.coerceAtMost(TOTAL_PAGES - 2)
+        val density      = resources.displayMetrics.density
+        val activeDotW   = (22 * density).toInt()
+        val inactiveDotW = (6  * density).toInt()
+        val dotH         = (6  * density).toInt()
+
         repeat(binding.dotsContainer.childCount) { i ->
             val dot = binding.dotsContainer.getChildAt(i)
-            val isSelected = i == displayPos
-            
-            val targetColor = if (isSelected) Color.WHITE else Color.argb(128, 255, 255, 255)
-            dot.backgroundTintList = android.content.res.ColorStateList.valueOf(targetColor)
-            
-            val targetSize = if (isSelected) {
-                (10 * resources.displayMetrics.density).toInt()
-            } else {
-                (6 * resources.displayMetrics.density).toInt()
-            }
-            
-            val currentSize = dot.layoutParams.width
-            if (currentSize != targetSize && currentSize > 0) {
-                android.animation.ValueAnimator.ofInt(currentSize, targetSize).apply {
-                    duration = 200
+            val isSelected   = i == displayPos
+            val targetWidth  = if (isSelected) activeDotW else inactiveDotW
+            val currentWidth = dot.layoutParams.width
+
+            // Swap drawable immediately so colour/shape change is snappy
+            dot.setBackgroundResource(
+                if (isSelected) com.rainiq.R.drawable.bg_onboarding_dot_active
+                else            com.rainiq.R.drawable.bg_onboarding_dot_inactive
+            )
+
+            // Animate only the width — height stays fixed at 6dp
+            if (currentWidth != targetWidth && currentWidth > 0) {
+                android.animation.ValueAnimator.ofInt(currentWidth, targetWidth).apply {
+                    duration     = 220
+                    interpolator = android.view.animation.AccelerateDecelerateInterpolator()
                     addUpdateListener { anim ->
-                        val value = anim.animatedValue as Int
+                        val w = anim.animatedValue as Int
                         dot.layoutParams = (dot.layoutParams as LinearLayout.LayoutParams).apply {
-                            width = value
-                            height = value
+                            width  = w
+                            height = dotH
                         }
                     }
                     start()
                 }
             } else {
                 dot.layoutParams = (dot.layoutParams as LinearLayout.LayoutParams).apply {
-                    width = targetSize
-                    height = targetSize
+                    width  = targetWidth
+                    height = dotH
                 }
             }
         }

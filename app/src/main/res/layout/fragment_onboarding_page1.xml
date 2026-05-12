@@ -1,78 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     fragment_onboarding_page1.xml
-    Screen 1: "Every Drop, Counted" — animated rain illustration hero
+    Screen 1: "Every Drop, Counted"
+    Illustration fills the top ~58% of screen.
+    Text sits in a clean dark section below — no overlap.
 -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:paddingStart="28dp"
-    android:paddingEnd="28dp">
+    android:background="@color/bg_deepest"
+    android:orientation="vertical">
 
-    <!-- Rain Illustration — takes top 55% of screen -->
-    <com.rainiq.components.RainfallIllustrationView
-        android:id="@+id/rainfallView"
+    <!-- Illustration — takes top 58% of the screen -->
+    <ImageView
+        android:id="@+id/imgIllustration"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0" />
+        android:layout_weight="58"
+        android:scaleType="centerCrop"
+        android:src="@drawable/illustration1"
+        android:importantForAccessibility="no" />
 
-    <!-- Text content -->
+    <!-- Text section — clean dark background, bottom 42% -->
     <LinearLayout
         android:id="@+id/textContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="42"
         android:orientation="vertical"
-        android:layout_marginTop="32dp"
-        android:paddingBottom="160dp">
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="188dp">
 
-        <!-- Headline -->
+        <!-- "Every Drop," — white -->
+        <TextView
+            android:id="@+id/tvHeadlinePart1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Every Drop,"
+            android:textSize="40sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:letterSpacing="-0.022"
+            android:alpha="0" />
+
+        <!-- "Counted." — teal -->
         <TextView
             android:id="@+id/tvHeadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Every Drop,\nCounted."
+            android:text="Counted."
             android:textSize="40sp"
-            android:textColor="@color/text_primary"
-            android:fontFamily="@font/sf_pro_display_medium"
-            android:letterSpacing="-0.020"
-            android:lineSpacingExtra="4sp"
+            android:textColor="@color/accent_teal"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:letterSpacing="-0.022"
             android:alpha="0" />
 
-        <!-- Sub-headline -->
+        <!-- Subtitle -->
         <TextView
             android:id="@+id/tvSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="RainIQ turns your rooftop into a measurable water asset. Start tracking your rainwater savings — one drop at a time."
-            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:text="RainIQ turns your rooftop into a measurable water asset. Start tracking your rainwater savings - one drop at a time."
+            android:textSize="14sp"
             android:textColor="@color/text_secondary"
             android:fontFamily="@font/sf_pro_display_regular"
-            android:lineSpacingExtra="5sp"
+            android:lineSpacingExtra="4sp"
             android:alpha="0" />
 
-        <!-- Tagline chip -->
-        <FrameLayout
-            android:id="@+id/chipTagline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_glass_chip"
-            android:layout_marginTop="20dp"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:alpha="0">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="💧  Every drop, counted."
-                android:textColor="@color/accent_lime"
-                style="@style/TextStyle.ChipLabel" />
-        </FrameLayout>
     </LinearLayout>
+
+    <!-- Hidden view so binding doesn't crash (chipTagline was used in old code) -->
+    <View
+        android:id="@+id/chipTagline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
 </LinearLayout>
