@@ -34,7 +34,7 @@ import java.util.Calendar
  * the Room HarvestRepository (logged rainfall entries).
  * No mock data remains.
  *
- * Designed and Developed by Rahul Mirji
+ * Designed and Developed by Yuvraj Bhatt
  */
 class DashboardFragment : Fragment() {
 
