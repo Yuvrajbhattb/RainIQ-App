@@ -161,19 +161,13 @@ class SetupFormFragment : Fragment() {
     private fun setupSaveButton() {
         binding.btnSave.setOnClickListener {
             if (!validateForm()) return@setOnClickListener
-
-            // Spring press animation
-            it.animate().scaleX(0.94f).scaleY(0.94f).setDuration(80).withEndAction {
-                it.animate().scaleX(1.04f).scaleY(1.04f).setDuration(120).withEndAction {
-                    it.animate().scaleX(1f).scaleY(1f).setDuration(80).withEndAction {
-                        saveAndLaunch()
-                    }.start()
-                }.start()
-            }.start()
+            binding.btnSave.isEnabled = false
+            saveAndLaunch()
         }
     }
 
     private fun validateForm(): Boolean {
+        if (_binding == null) return false
         var valid = true
 
         val area = binding.etRoofArea.text?.toString()?.toFloatOrNull()
@@ -207,20 +201,26 @@ class SetupFormFragment : Fragment() {
     }
 
     private fun saveAndLaunch() {
-        val area = binding.etRoofArea.text.toString().toFloat()
-        val tank = binding.etTankCapacity.text.toString().toFloat()
-        val city = binding.etCity.text.toString().trim()
+        try {
+            val ctx = context ?: return
+            val area = _binding?.etRoofArea?.text?.toString()?.toFloatOrNull() ?: return
+            val tank = _binding?.etTankCapacity?.text?.toString()?.toFloatOrNull() ?: return
+            val city = _binding?.etCity?.text?.toString()?.trim() ?: return
 
-        // Extract material name without the coefficient part
-        val materialFull = binding.tvRoofMaterial.text.toString()
-        val material = roofMaterials.firstOrNull {
-            materialFull.startsWith(it.first)
-        }?.first ?: "Concrete/RCC"
+            // Extract material name without the coefficient part
+            val materialFull = _binding?.tvRoofMaterial?.text?.toString() ?: ""
+            val material = roofMaterials.firstOrNull {
+                materialFull.startsWith(it.first)
+            }?.first ?: "Concrete/RCC"
 
-        prefs.saveRoofSetup(area, tank, material, selectedRunoff, city)
+            prefs.saveRoofSetup(area, tank, material, selectedRunoff, city)
 
-        startActivity(Intent(requireContext(), MainActivity::class.java))
-        requireActivity().finish()
+            startActivity(Intent(ctx, MainActivity::class.java))
+            activity?.finish()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            _binding?.btnSave?.isEnabled = true
+        }
     }
 
     override fun onResume() {
