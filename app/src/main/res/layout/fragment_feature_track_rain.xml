@@ -58,9 +58,12 @@
                     android:layout_marginBottom="12dp" />
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:orientation="horizontal" android:gravity="center_vertical">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/tvRainfallValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="42"
+                        android:text="0"
                         android:textColor="@color/accent_teal" android:textSize="52sp"
                         android:fontFamily="@font/sf_pro_display_medium" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -68,13 +71,13 @@
                         android:textColor="@color/text_secondary" android:textSize="20sp"
                         android:fontFamily="@font/sf_pro_display_regular" android:layout_marginStart="8dp" />
                 </LinearLayout>
-                <!-- Simple slider placeholder -->
+
                 <SeekBar
                     android:id="@+id/seekRainfall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:max="200"
-                    android:progress="42"
+                    android:progress="0"
                     android:layout_marginTop="12dp"
                     android:progressTint="@color/accent_teal"
                     android:thumbTint="@color/accent_teal" />
@@ -107,8 +110,11 @@
                     android:orientation="horizontal">
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="2,340"
+                        <TextView
+                            android:id="@+id/tvCalculatedLiters"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
                             android:textColor="@color/accent_teal" android:textSize="28sp"
                             android:fontFamily="@font/sf_pro_display_medium" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -120,8 +126,11 @@
                         android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp" />
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1" android:orientation="vertical" android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="₹58"
+                        <TextView
+                            android:id="@+id/tvCalculatedMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹0"
                             android:textColor="@color/accent_lime" android:textSize="28sp"
                             android:fontFamily="@font/sf_pro_display_medium" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -148,8 +157,11 @@
                     <ImageView android:layout_width="20dp" android:layout_height="20dp"
                         android:src="@drawable/ic_calendar" android:tint="@color/accent_teal"
                         android:layout_marginEnd="12dp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Today, 26 April 2026"
+                    <TextView
+                        android:id="@+id/tvEntryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today"
                         android:textColor="@color/text_primary" android:textSize="15sp"
                         android:fontFamily="@font/sf_pro_display_regular" />
                 </LinearLayout>
