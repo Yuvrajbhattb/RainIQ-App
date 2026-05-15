@@ -78,7 +78,7 @@
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/RahulMirji/RainIQ.git
+   git clone https://github.com/Yuvrajbhattb/RainIQ-App.git
    ```
 2. Open in **Android Studio**
 3. Add your API keys to `local.properties`:
