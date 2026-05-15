@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
  * HarvestEntry — A single rainfall logging event.
  * Stores the raw rainfall (mm) entered by the user and the calculated harvest in liters.
  *
- * Designed and Developed by Rahul Mirji
+ * Designed and Developed by Yuvraj Bhatt
  */
 @Entity(tableName = "harvest_entries")
 data class HarvestEntry(

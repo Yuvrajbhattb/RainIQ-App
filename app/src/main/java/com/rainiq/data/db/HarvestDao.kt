@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 /**
  * HarvestDao — Data Access Object for harvest_entries table.
  *
- * Designed and Developed by Rahul Mirji
+ * Designed and Developed by Yuvraj Bhatt
  */
 @Dao
 interface HarvestDao {

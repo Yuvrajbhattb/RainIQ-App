@@ -13,7 +13,7 @@ import java.util.Locale
  * HarvestRepository -- Single source of truth for all harvest data.
  * Wraps the DAO and exposes clean, calculated values to the UI layer.
  *
- * Designed and Developed by Rahul Mirji
+ * Designed and Developed by Yuvraj Bhatt
  */
 class HarvestRepository(
     private val db: AppDatabase,

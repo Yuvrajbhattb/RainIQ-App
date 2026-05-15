@@ -11,7 +11,7 @@ import androidx.room.RoomDatabase
  * To add a new entity or migration in the future, increment `version`
  * and add a Migration object to the builder.
  *
- * Designed and Developed by Rahul Mirji
+ * Designed and Developed by Yuvraj Bhatt
  */
 @Database(entities = [HarvestEntry::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
@@ -28,7 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "rainiq_database"
-                ).build().also { INSTANCE = it }
+                ).fallbackToDestructiveMigration().build().also { INSTANCE = it }
             }
         }
     }
