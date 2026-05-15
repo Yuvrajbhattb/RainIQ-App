@@ -77,7 +77,7 @@
                         android:id="@+id/tvProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rahul"
+                        android:text="Yuvraj"
                         android:textColor="@color/text_primary"
                         android:textSize="20sp"
                         android:fontFamily="@font/sf_pro_display_medium" />
@@ -85,7 +85,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="rahul@example.com"
+                        android:text="yuvraj@example.com"
                         android:textColor="@color/text_secondary"
                         android:textSize="13sp"
                         android:fontFamily="@font/sf_pro_display_regular"
