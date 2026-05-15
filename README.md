@@ -1,102 +1,102 @@
-# RainIQ
+# RainIQ 🌧️
+> **Every drop, counted.**
 
-> *"Every drop, counted."*
-
-**RainIQ** is an Android app that transforms rainwater harvesting from a passive, untracked activity into a data-driven, measurable habit. It helps households log daily rainfall, calculate actual water harvested using a verified engineering formula, visualize savings through an animated water tank, and get AI-powered tips via Google Gemini.
+**RainIQ** is an advanced Android application designed to transform rainwater harvesting from a passive activity into a data-driven, measurable habit. By leveraging verified engineering formulas and AI-powered insights, RainIQ helps households log rainfall, calculate water savings, and optimize their water conservation efforts.
 
 ---
 
-## 📱 Screenshots & Features
+## 📱 Screenshots
 
-### 🏠 Dashboard
-- Animated water tank that fills up as you log rainfall
-- Today's savings and all-time total with live counters
-- Impact score — converts liters saved into household water days
-- Monthly goal progress bar
-- 7-day streak tracker
+<p align="center">
+  <img src="screenshots/dashboard.jpg" width="30%" alt="Dashboard" />
+  <img src="screenshots/setup.jpg" width="30%" alt="Onboarding Setup" />
+</p>
 
-### 🌧️ Log Rainfall
-- Log rainfall in millimetres with date, roof type, and optional notes
-- Live harvest preview using the formula: `Area × Rainfall (mm) × 0.0929 × Runoff Coefficient`
-- Input validation with helpful error messages
-- Optional photo attachment (rain gauge capture)
+---
 
-### 📋 History
-- Full log of all rainfall entries
-- Search and filter by date range
-- Swipe to delete with undo support
+## ✨ Key Features
 
-### 📈 Monthly Report
-- Bar/line charts of monthly rainfall and water collected
-- Total savings summary with environmental impact stats
+### 🏠 Intelligent Dashboard
+- **Animated Water Tank**: A visual representation of your harvested water that fills dynamically.
+- **Live Statistics**: Real-time tracking of today's savings and all-time totals.
+- **Impact Score**: Understand your conservation in practical terms (e.g., "Enough for 3 washing machine cycles").
+- **Goal Tracking**: Stay motivated with monthly progress bars and a 7-day streak tracker.
+
+### 🌧️ Precision Logging
+- **Engineering-Grade Calculations**: Uses the formula: `Area × Rainfall (mm) × 0.0929 × Runoff Coefficient`.
+- **Roof Profiles**: Support for various materials (Metal, Concrete, Clay Tiles, etc.) with verified runoff coefficients.
+- **Validation**: Smart input validation to ensure accurate data entry.
 
 ### 🤖 JalBot — AI Assistant
-- Powered by Google Gemini API
-- Personalized water-saving tips based on your setup
-- AI crop/garden planner — suggests what you can grow with your saved water
-- Conversational chat interface
+- **Powered by Google Gemini**: Personalized conservation tips and garden planning.
+- **Crop Planner**: AI-driven suggestions on what to grow based on your harvested water volume.
+- **Conversational UI**: Easy-to-use chat interface for all your water-related queries.
 
-### 🌱 Goals & Garden
-- Set monthly water collection targets
-- Track progress toward your goals
-- Garden planner with AI-generated suggestions
-
-### 🏆 Achievements
-- Badges and streaks for consistent logging
-- Gamified conservation milestones
-
-### 🌤️ Weather
-- Live weather forecast via OpenWeatherMap API
-- Upcoming rain predictions to help you prepare
-
-### 👤 Profile & Settings
-- Roof area, tank capacity, and material setup
-- Measurement units, dark mode, rain alerts, daily reminders
-- Export history, data privacy controls
+### 📈 Reports & Analytics
+- **Visual Insights**: Detailed bar and line charts for rainfall and collection trends.
+- **Historical Logs**: Comprehensive history with search, filter, and swipe-to-delete functionality.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technical Specifications
 
 | Layer | Technology |
 |-------|-----------|
-| Language | Kotlin |
-| UI | XML Layouts + Material Design 3 |
-| Architecture | MVVM (Model-View-ViewModel) |
-| Local Database | Room DB (Jetpack) |
-| State Management | LiveData + ViewModel |
-| Background Tasks | WorkManager (Jetpack) |
-| Charts | MPAndroidChart |
-| AI | Google Gemini API |
-| Weather | OpenWeatherMap API |
-| Min SDK | API 26 (Android 8.0 Oreo) |
-| Target SDK | API 35 (Android 15) |
+| **Language** | Kotlin |
+| **UI Framework** | XML + Material Design 3 (M3) |
+| **Architecture** | MVVM + Clean Architecture principles |
+| **Database** | Room DB (Persistent Storage) |
+| **Concurrency** | Coroutines + Flow |
+| **Animations** | Lottie + Custom View Transitions |
+| **AI Integration** | Google Generative AI (Gemini Pro) |
+| **Charts** | MPAndroidChart |
+| **Minimum SDK** | API 26 (Android 8.0) |
+| **Target SDK** | API 35 (Android 15) |
 
 ---
 
 ## 🚀 Getting Started
 
-1. Clone the repository
+### Prerequisites
+- **Android Studio**: Ladybug (2024.2.1) or newer recommended.
+- **JDK**: Version 17.
+- **Android SDK**: API 35 (Android 15).
+
+### Installation Steps
+
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/Yuvrajbhattb/RainIQ-App.git
    ```
-2. Open in **Android Studio**
-3. Add your API keys to `local.properties`:
-   ```
-   GEMINI_API_KEY=your_gemini_key_here
+
+2. **Open Project**:
+   - Launch Android Studio.
+   - Select **File > Open** and navigate to the cloned `RainIQ` directory.
+   - Wait for the **Gradle Sync** to complete.
+
+3. **Configure API Keys**:
+   RainIQ requires external API keys for full functionality. Create a `local.properties` file in the root directory (if not already present) and add:
+   ```properties
+   GEMINI_API_KEY=your_gemini_api_key_here
    WEATHER_API_KEY=your_openweathermap_key_here
    ```
-4. Build and run on a device or emulator (Android 8.0+)
+   *Note: You can get a Gemini key from [Google AI Studio](https://aistudio.google.com/) and a Weather key from [OpenWeatherMap](https://openweathermap.org/api).*
+
+4. **Build & Run**:
+   - Connect an Android device (API 26+) or launch an Emulator.
+   - Click the **'Run'** (Green Play) button in the toolbar or press `Shift + F10`.
 
 ---
 
-## 📐 Core Formula
+## 📐 The Science Behind RainIQ
 
-```
+The app calculates water harvest using the standard engineering formula for rooftop rainwater harvesting:
+
+```text
 Water Harvested (L) = Roof Area (sq ft) × Rainfall (mm) × 0.0929 × Runoff Coefficient
 ```
 
-**Runoff Coefficients by roof type:**
+### Runoff Coefficients
 | Roof Material | Coefficient |
 |---------------|-------------|
 | Metal / Tin | 0.90 |
@@ -107,40 +107,24 @@ Water Harvested (L) = Roof Area (sq ft) × Rainfall (mm) × 0.0929 × Runoff Coe
 
 ---
 
-## 📁 Project Structure
+## 📂 Repository Structure
 
-```
+```text
 com.rainiq/
-├── ui/
-│   ├── dashboard/       → Home Dashboard
-│   ├── entry/           → Add Rainfall Entry
-│   ├── history/         → Rainfall History Log
-│   ├── report/          → Monthly Report
-│   ├── ai/              → JalBot AI Assistant
-│   ├── features/        → Goals, Weather, Achievements, Garden
-│   ├── onboarding/      → Splash + Setup screens
-│   └── settings/        → Profile & Settings
-├── data/
-│   ├── db/              → Room DB, DAOs, Entities
-│   ├── repository/      → Data repositories
-│   └── preferences/     → SharedPreferences helpers
-├── domain/
-│   ├── models/          → Data models
-│   └── calculator/      → Water calculation logic
-├── network/
-│   ├── gemini/          → Gemini API service
-│   └── weather/         → OpenWeatherMap service
-└── utils/               → Extensions, constants, formatters
+├── ui/              # Fragments, ViewModels, and UI Logic
+├── data/            # Room DB, Repositories, and Preferences
+├── domain/          # Business logic and Math Calculators
+├── network/         # Retrofit services for Gemini & Weather
+└── utils/           # Extension functions and Constants
 ```
 
 ---
 
-## 📋 Requirements
-
-- Android 8.0 (API 26) or higher
-- Internet connection for AI tips and weather features
-- Works fully offline for logging and history
+## 🔒 Privacy & Security
+- All rainfall data is stored **locally** on your device using Room DB.
+- No personal data is uploaded without user consent.
+- API keys are managed securely via `local.properties` and are excluded from version control.
 
 ---
 
-*Designed and Developed by Yuvraj Bhatt*
+**Developed with ❤️ by [Yuvraj Bhatt](https://github.com/Yuvrajbhattb)**
