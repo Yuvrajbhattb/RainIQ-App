@@ -143,4 +143,4 @@ com.rainiq/
 
 ---
 
-*Designed and Developed by Rahul Mirji*
+*Designed and Developed by Yuvraj Bhatt*

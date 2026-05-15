@@ -680,4 +680,4 @@ Before shipping a new or modified screen:
 10. Cards should avoid Material shadow elevation unless they are floating navigation or CTA-like objects.
 
 
-<!-- Designed and Developed by Rahul Mirji -->
+<!-- Designed and Developed by Yuvraj Bhatt -->
