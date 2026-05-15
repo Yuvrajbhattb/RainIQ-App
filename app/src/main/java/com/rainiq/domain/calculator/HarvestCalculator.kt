@@ -7,7 +7,7 @@ package com.rainiq.domain.calculator
  *   Liters = roofAreaSqFt × 0.0929 (→ m²) × rainfallMm × 0.001 (→ m) × runoff × 1000 (m³ → L)
  *   Simplified: area × rainfall × 0.0929 × runoff
  *
- * Designed and Developed by Rahul Mirji
+ * Designed and Developed by Yuvraj Bhatt
  */
 object HarvestCalculator {
 
